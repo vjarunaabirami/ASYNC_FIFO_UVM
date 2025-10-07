@@ -1,7 +1,7 @@
 # ASYNC_FIFO_UVM
 # Asynchronous FIFO (Async FIFO) — UVM Verification
 
-> Repository: Async FIFO Verification
+> Repository: https://github.com/vjarunaabirami/ASYNC_FIFO_UVM.git
 
 ## Project Overview
 
@@ -60,20 +60,10 @@ The verification environment follows a UVM architecture with separate read and w
 
 ### Coverage Report
 
-- Input Coverage  
+![WhatsApp Image 2025-10-07 at 22 20 38_1989b758](https://github.com/user-attachments/assets/a873cec6-40aa-4b0e-88d7-777d6bcf2600)
+![WhatsApp Image 2025-10-07 at 22 22 03_7145efff](https://github.com/user-attachments/assets/1ef40982-5a0f-45b0-bcdf-5be0f3eab2ee)
 
-- Output Coverage  
-
-- Functional Coverage  
-
-- Assertion Coverage  
-
-- Overall Coverage  
 
 ## Resources
-
-- Verification Report: [Async FIFO Verification Report](#)  
-- Test Plan: [Async FIFO Test Plan](#)  
-- Functional Coverage Plan: [Async FIFO Coverage Plan](#)  
-- Assertions: [Async FIFO Assertion Plan](#)  
-- Async FIFO Reference Manual: [Async FIFO Manual](#)
+https://docs.google.com/document/d/1slvywV5etTWUGWTzVP5CzIpTR_g6Y1AI/edit
+https://docs.google.com/spreadsheets/d/1BWjzOoWHHvvZZxTuIldyMqgvkjZpfAI8QzK7FbJmMm0/edit?gid=0#gid=0
