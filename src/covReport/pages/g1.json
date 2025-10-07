@@ -1,0 +1,21 @@
+var g_data = {
+g781:[{dummy:0},
+{name:'write_cov',f:1,type:1,id:782,tb:'258',h:'101',m:'157',hp:'39.14%',cov:['69.33%','Y'],g:'100.00%',gp:['69.33%','Y'],opts:[[],['merge_instance','auto(true)']],parent:'781'},
+{name:'\\/async_fifo_pkg::subscriber::write_cov ',f:1,type:2,id:785,tb:'258',h:'101',m:'157',hp:'39.14%',cov:['69.33%','Y'],g:'100.00%',gp:['69.33%','Y'],opts:[[],['per_instance','true']],cvg:'write_cov',parent:'782'},
+{name:'read_cov',f:1,type:1,id:788,tb:'258',h:'34',m:'224',hp:'13.17%',cov:['56.25%','Y'],g:'100.00%',gp:['56.25%','Y'],opts:[[],['merge_instance','auto(true)']],parent:'781'},
+{name:'\\/async_fifo_pkg::subscriber::read_cov ',f:1,type:2,id:791,tb:'258',h:'34',m:'224',hp:'13.17%',cov:['56.25%','Y'],g:'100.00%',gp:['56.25%','Y'],opts:[[],['per_instance','true']],cvg:'read_cov',parent:'788'}],
+c782:{name:'write_cov',type:1,pHash:'781',pPath:'/async_fifo_pkg/subscriber',totals:[258,101,'39.14%','R',0,0,'0.00%','R'],cvp:[{dummy:0},
+{name:'WDATA_CVG',f:1,type:4,id:783,tb:'256',h:'99',m:'157',hp:'38.67%',cov:['38.67%','R'],g:'100.00%',gp:['38.67%','R'],hasb:1,parent:'782'},
+{name:'WINC_CVG',f:1,type:4,id:784,tb:'2',h:'2',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],hasb:1,parent:'782'}],crx:[{dummy:0}]},
+c785:{name:'\\/async_fifo_pkg::subscriber::write_cov ',type:2,pHash:'781',pPath:'/async_fifo_pkg/subscriber',totals:[258,101,'39.14%','R',0,0,'0.00%','R'],cvp:[{dummy:0},
+{name:'WDATA_CVG',f:1,type:4,id:786,tb:'256',h:'99',m:'157',hp:'38.67%',cov:['38.67%','R'],g:'100.00%',gp:['38.67%','R'],hasb:1,parent:'785'},
+{name:'WINC_CVG',f:1,type:4,id:787,tb:'2',h:'2',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],hasb:1,parent:'785'}],crx:[{dummy:0}]},
+c788:{name:'read_cov',type:1,pHash:'781',pPath:'/async_fifo_pkg/subscriber',totals:[258,34,'13.17%','R',0,0,'0.00%','R'],cvp:[{dummy:0},
+{name:'RDATA_CVG',f:1,type:4,id:789,tb:'256',h:'32',m:'224',hp:'12.50%',cov:['12.50%','R'],g:'100.00%',gp:['12.50%','R'],hasb:1,parent:'788'},
+{name:'RINC_CVG',f:1,type:4,id:790,tb:'2',h:'2',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],hasb:1,parent:'788'}],crx:[{dummy:0}]},
+c791:{name:'\\/async_fifo_pkg::subscriber::read_cov ',type:2,pHash:'781',pPath:'/async_fifo_pkg/subscriber',totals:[258,34,'13.17%','R',0,0,'0.00%','R'],cvp:[{dummy:0},
+{name:'RDATA_CVG',f:1,type:4,id:792,tb:'256',h:'32',m:'224',hp:'12.50%',cov:['12.50%','R'],g:'100.00%',gp:['12.50%','R'],hasb:1,parent:'791'},
+{name:'RINC_CVG',f:1,type:4,id:793,tb:'2',h:'2',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],hasb:1,parent:'791'}],crx:[{dummy:0}]},
+dummyEnd:0
+};
+processCovergroupsData(g_data);

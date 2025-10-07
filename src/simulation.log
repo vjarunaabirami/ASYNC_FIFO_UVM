@@ -1,0 +1,1563 @@
+# vsim -vopt work.top -voptargs="+acc=npr" -assertdebug -l simulation.log -coverage -c -do "coverage save -onexit -assert -directive -cvg -codeAll coverage.ucdb; run -all; exit" 
+# Start time: 15:54:15 on Oct 07,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# //  Questa Sim
+# //  Version 10.6c linux Jul 25 2017
+# //
+# //  Copyright 1991-2017 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.async_fifo_interface(fast)
+# Loading work.uvm_pkg(fast)
+# Loading work.async_fifo_pkg(fast)
+# ** Note: (vsim-8785) UVM-aware debugging capabilities will be disabled since no compiled "questa_uvm_pkg" can be found.
+# This also means that later if you turn on UVM-aware debugging your debug simulations may have
+# different random seeds from your non-debug simulations.
+# Loading work.top(fast)
+# Loading work.async_fifo_interface(fast)
+# Loading work.FIFO(fast)
+# Loading work.two_ff_sync(fast)
+# Loading work.FIFO_memory(fast)
+# Loading work.rptr_empty(fast)
+# Loading work.wptr_full(fast)
+# ** Warning: (vsim-8634) Code was not compiled with coverage options.
+# coverage save -onexit -assert -directive -cvg -codeAll coverage.ucdb
+#  run -all
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO @ 0: reporter [RNTST] Running test test...
+# UVM_INFO write_driver.sv(25) @ 25: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x78, WINC=1
+# UVM_INFO write_monitor.sv(32) @ 45: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x78, WINC=1, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 45: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x78, WINC=1
+# UVM_INFO async_fifo_write_seq.sv(13) @ 45: uvm_test_top.env_o.wrt_agt.seqr@@w_seq [WRITE_SEQ] WRITE -> Data: 0x78
+# UVM_INFO scoreboard.sv(59) @ 45: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] WRITE 120 COMPLETED, PASS (size=1)
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 45: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x1, WINC=1
+# UVM_INFO read_driver.sv(25) @ 50: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 65: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x1, WINC=1, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 65: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x1, WINC=1
+# UVM_INFO async_fifo_write_seq.sv(13) @ 65: uvm_test_top.env_o.wrt_agt.seqr@@w_seq [WRITE_SEQ] WRITE -> Data: 0x1
+# UVM_INFO scoreboard.sv(59) @ 65: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] WRITE 1 COMPLETED, PASS (size=2)
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 65: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0xe1, WINC=1
+# UVM_INFO write_monitor.sv(32) @ 85: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xe1, WINC=1, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 85: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xe1, WINC=1
+# UVM_INFO async_fifo_write_seq.sv(13) @ 85: uvm_test_top.env_o.wrt_agt.seqr@@w_seq [WRITE_SEQ] WRITE -> Data: 0xe1
+# UVM_INFO scoreboard.sv(59) @ 85: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] WRITE 225 COMPLETED, PASS (size=3)
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 85: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x75, WINC=1
+# UVM_INFO read_monitor.sv(33) @ 90: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=0, DATA=0x78
+# UVM_INFO subscriber.sv(48) @ 90: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0x78, RINC=1
+# UVM_INFO async_fifo_read_seq.sv(13) @ 90: uvm_test_top.env_o.rd_agt.seqr@@r_seq [READ_SEQ] Read sequence generated: 
+# UVM_INFO scoreboard.sv(87) @ 90: uvm_test_top.env_o.scb [SCOREBOARD-READ] READ DATA MATCH: 120, PASS
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 90: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 105: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x75, WINC=1, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 105: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x75, WINC=1
+# UVM_INFO async_fifo_write_seq.sv(13) @ 105: uvm_test_top.env_o.wrt_agt.seqr@@w_seq [WRITE_SEQ] WRITE -> Data: 0x75
+# UVM_INFO scoreboard.sv(59) @ 105: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] WRITE 117 COMPLETED, PASS (size=3)
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 105: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x41, WINC=1
+# UVM_INFO write_monitor.sv(32) @ 125: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x41, WINC=1, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 125: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x41, WINC=1
+# UVM_INFO async_fifo_write_seq.sv(13) @ 125: uvm_test_top.env_o.wrt_agt.seqr@@w_seq [WRITE_SEQ] WRITE -> Data: 0x41
+# UVM_INFO scoreboard.sv(59) @ 125: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] WRITE 65 COMPLETED, PASS (size=4)
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 125: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0xcd, WINC=1
+# UVM_INFO read_monitor.sv(33) @ 130: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=0, DATA=0x1
+# UVM_INFO subscriber.sv(48) @ 130: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0x1, RINC=1
+# UVM_INFO async_fifo_read_seq.sv(13) @ 130: uvm_test_top.env_o.rd_agt.seqr@@r_seq [READ_SEQ] Read sequence generated: 
+# UVM_INFO scoreboard.sv(87) @ 130: uvm_test_top.env_o.scb [SCOREBOARD-READ] READ DATA MATCH: 1, PASS
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 130: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 145: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xcd, WINC=1, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 145: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xcd, WINC=1
+# UVM_INFO async_fifo_write_seq.sv(13) @ 145: uvm_test_top.env_o.wrt_agt.seqr@@w_seq [WRITE_SEQ] WRITE -> Data: 0xcd
+# UVM_INFO scoreboard.sv(59) @ 145: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] WRITE 205 COMPLETED, PASS (size=4)
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 145: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0xfa, WINC=1
+# UVM_INFO write_monitor.sv(32) @ 165: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xfa, WINC=1, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 165: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xfa, WINC=1
+# UVM_INFO async_fifo_write_seq.sv(13) @ 165: uvm_test_top.env_o.wrt_agt.seqr@@w_seq [WRITE_SEQ] WRITE -> Data: 0xfa
+# UVM_INFO scoreboard.sv(59) @ 165: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] WRITE 250 COMPLETED, PASS (size=5)
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 165: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x29, WINC=1
+# UVM_INFO read_monitor.sv(33) @ 170: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=0, DATA=0xe1
+# UVM_INFO subscriber.sv(48) @ 170: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xe1, RINC=1
+# UVM_INFO async_fifo_read_seq.sv(13) @ 170: uvm_test_top.env_o.rd_agt.seqr@@r_seq [READ_SEQ] Read sequence generated: 
+# UVM_INFO scoreboard.sv(87) @ 170: uvm_test_top.env_o.scb [SCOREBOARD-READ] READ DATA MATCH: 225, PASS
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 170: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 185: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x29, WINC=1, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 185: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x29, WINC=1
+# UVM_INFO async_fifo_write_seq.sv(13) @ 185: uvm_test_top.env_o.wrt_agt.seqr@@w_seq [WRITE_SEQ] WRITE -> Data: 0x29
+# UVM_INFO scoreboard.sv(59) @ 185: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] WRITE 41 COMPLETED, PASS (size=5)
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 185: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x18, WINC=1
+# UVM_INFO write_monitor.sv(32) @ 205: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x18, WINC=1, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 205: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x18, WINC=1
+# UVM_INFO async_fifo_write_seq.sv(13) @ 205: uvm_test_top.env_o.wrt_agt.seqr@@w_seq [WRITE_SEQ] WRITE -> Data: 0x18
+# UVM_INFO scoreboard.sv(59) @ 205: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] WRITE 24 COMPLETED, PASS (size=6)
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 205: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x3d, WINC=1
+# UVM_INFO read_monitor.sv(33) @ 210: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=0, DATA=0x75
+# UVM_INFO subscriber.sv(48) @ 210: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0x75, RINC=1
+# UVM_INFO async_fifo_read_seq.sv(13) @ 210: uvm_test_top.env_o.rd_agt.seqr@@r_seq [READ_SEQ] Read sequence generated: 
+# UVM_INFO scoreboard.sv(87) @ 210: uvm_test_top.env_o.scb [SCOREBOARD-READ] READ DATA MATCH: 117, PASS
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 210: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 225: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x3d, WINC=1, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 225: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x3d, WINC=1
+# UVM_INFO async_fifo_write_seq.sv(13) @ 225: uvm_test_top.env_o.wrt_agt.seqr@@w_seq [WRITE_SEQ] WRITE -> Data: 0x3d
+# UVM_INFO scoreboard.sv(59) @ 225: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] WRITE 61 COMPLETED, PASS (size=6)
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 225: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0xfd, WINC=1
+# UVM_INFO write_monitor.sv(32) @ 245: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xfd, WINC=1, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 245: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xfd, WINC=1
+# UVM_INFO async_fifo_write_seq.sv(13) @ 245: uvm_test_top.env_o.wrt_agt.seqr@@w_seq [WRITE_SEQ] WRITE -> Data: 0xfd
+# UVM_INFO scoreboard.sv(59) @ 245: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] WRITE 253 COMPLETED, PASS (size=7)
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 245: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0xb0, WINC=1
+# UVM_INFO read_monitor.sv(33) @ 250: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=0, DATA=0x41
+# UVM_INFO subscriber.sv(48) @ 250: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0x41, RINC=1
+# UVM_INFO async_fifo_read_seq.sv(13) @ 250: uvm_test_top.env_o.rd_agt.seqr@@r_seq [READ_SEQ] Read sequence generated: 
+# UVM_INFO scoreboard.sv(87) @ 250: uvm_test_top.env_o.scb [SCOREBOARD-READ] READ DATA MATCH: 65, PASS
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 250: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 265: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xb0, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 265: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xb0, WINC=1
+# UVM_INFO async_fifo_write_seq.sv(13) @ 265: uvm_test_top.env_o.wrt_agt.seqr@@w_seq [WRITE_SEQ] WRITE -> Data: 0xb0
+# UVM_ERROR scoreboard.sv(74) @ 265: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 265: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0xfe, WINC=1
+# UVM_INFO write_monitor.sv(32) @ 285: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xfe, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 285: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xfe, WINC=1
+# UVM_INFO async_fifo_write_seq.sv(13) @ 285: uvm_test_top.env_o.wrt_agt.seqr@@w_seq [WRITE_SEQ] WRITE -> Data: 0xfe
+# UVM_ERROR scoreboard.sv(74) @ 285: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 285: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0xe1, WINC=1
+# UVM_INFO read_monitor.sv(33) @ 290: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=0, DATA=0xcd
+# UVM_INFO subscriber.sv(48) @ 290: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xcd, RINC=1
+# UVM_INFO async_fifo_read_seq.sv(13) @ 290: uvm_test_top.env_o.rd_agt.seqr@@r_seq [READ_SEQ] Read sequence generated: 
+# UVM_INFO scoreboard.sv(87) @ 290: uvm_test_top.env_o.scb [SCOREBOARD-READ] READ DATA MATCH: 205, PASS
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 290: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 305: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xe1, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 305: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xe1, WINC=1
+# UVM_INFO async_fifo_write_seq.sv(13) @ 305: uvm_test_top.env_o.wrt_agt.seqr@@w_seq [WRITE_SEQ] WRITE -> Data: 0xe1
+# UVM_ERROR scoreboard.sv(74) @ 305: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 305: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0xf9, WINC=1
+# UVM_INFO write_monitor.sv(32) @ 325: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xf9, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 325: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xf9, WINC=1
+# UVM_INFO async_fifo_write_seq.sv(13) @ 325: uvm_test_top.env_o.wrt_agt.seqr@@w_seq [WRITE_SEQ] WRITE -> Data: 0xf9
+# UVM_ERROR scoreboard.sv(74) @ 325: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 325: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x2a, WINC=1
+# UVM_INFO read_monitor.sv(33) @ 330: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=0, DATA=0xfa
+# UVM_INFO subscriber.sv(48) @ 330: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xfa, RINC=1
+# UVM_INFO async_fifo_read_seq.sv(13) @ 330: uvm_test_top.env_o.rd_agt.seqr@@r_seq [READ_SEQ] Read sequence generated: 
+# UVM_INFO scoreboard.sv(87) @ 330: uvm_test_top.env_o.scb [SCOREBOARD-READ] READ DATA MATCH: 250, PASS
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 330: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 345: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x2a, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 345: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x2a, WINC=1
+# UVM_INFO async_fifo_write_seq.sv(13) @ 345: uvm_test_top.env_o.wrt_agt.seqr@@w_seq [WRITE_SEQ] WRITE -> Data: 0x2a
+# UVM_ERROR scoreboard.sv(74) @ 345: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 345: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x3a, WINC=1
+# UVM_INFO write_monitor.sv(32) @ 365: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x3a, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 365: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x3a, WINC=1
+# UVM_INFO async_fifo_write_seq.sv(13) @ 365: uvm_test_top.env_o.wrt_agt.seqr@@w_seq [WRITE_SEQ] WRITE -> Data: 0x3a
+# UVM_ERROR scoreboard.sv(74) @ 365: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 365: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x32, WINC=1
+# UVM_INFO read_monitor.sv(33) @ 370: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=0, DATA=0x29
+# UVM_INFO subscriber.sv(48) @ 370: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0x29, RINC=1
+# UVM_INFO async_fifo_read_seq.sv(13) @ 370: uvm_test_top.env_o.rd_agt.seqr@@r_seq [READ_SEQ] Read sequence generated: 
+# UVM_INFO scoreboard.sv(87) @ 370: uvm_test_top.env_o.scb [SCOREBOARD-READ] READ DATA MATCH: 41, PASS
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 370: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 385: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x32, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 385: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x32, WINC=1
+# UVM_INFO async_fifo_write_seq.sv(13) @ 385: uvm_test_top.env_o.wrt_agt.seqr@@w_seq [WRITE_SEQ] WRITE -> Data: 0x32
+# UVM_ERROR scoreboard.sv(74) @ 385: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 385: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x94, WINC=1
+# UVM_INFO write_monitor.sv(32) @ 405: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x94, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 405: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x94, WINC=1
+# UVM_INFO async_fifo_write_seq.sv(13) @ 405: uvm_test_top.env_o.wrt_agt.seqr@@w_seq [WRITE_SEQ] WRITE -> Data: 0x94
+# UVM_ERROR scoreboard.sv(74) @ 405: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 405: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0xd4, WINC=1
+# UVM_INFO read_monitor.sv(33) @ 410: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=0, DATA=0x18
+# UVM_INFO subscriber.sv(48) @ 410: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0x18, RINC=1
+# UVM_INFO async_fifo_read_seq.sv(13) @ 410: uvm_test_top.env_o.rd_agt.seqr@@r_seq [READ_SEQ] Read sequence generated: 
+# UVM_INFO scoreboard.sv(87) @ 410: uvm_test_top.env_o.scb [SCOREBOARD-READ] READ DATA MATCH: 24, PASS
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 410: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 425: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xd4, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 425: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xd4, WINC=1
+# UVM_INFO async_fifo_write_seq.sv(13) @ 425: uvm_test_top.env_o.wrt_agt.seqr@@w_seq [WRITE_SEQ] WRITE -> Data: 0xd4
+# UVM_ERROR scoreboard.sv(74) @ 425: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 425: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x25, WINC=1
+# UVM_INFO write_monitor.sv(32) @ 445: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x25, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 445: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x25, WINC=1
+# UVM_INFO async_fifo_write_seq.sv(13) @ 445: uvm_test_top.env_o.wrt_agt.seqr@@w_seq [WRITE_SEQ] WRITE -> Data: 0x25
+# UVM_ERROR scoreboard.sv(74) @ 445: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 445: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x1c, WINC=1
+# UVM_INFO read_monitor.sv(33) @ 450: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=0, DATA=0x3d
+# UVM_INFO subscriber.sv(48) @ 450: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0x3d, RINC=1
+# UVM_INFO async_fifo_read_seq.sv(13) @ 450: uvm_test_top.env_o.rd_agt.seqr@@r_seq [READ_SEQ] Read sequence generated: 
+# UVM_INFO scoreboard.sv(87) @ 450: uvm_test_top.env_o.scb [SCOREBOARD-READ] READ DATA MATCH: 61, PASS
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 450: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 465: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x1c, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 465: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x1c, WINC=1
+# UVM_INFO async_fifo_write_seq.sv(13) @ 465: uvm_test_top.env_o.wrt_agt.seqr@@w_seq [WRITE_SEQ] WRITE -> Data: 0x1c
+# UVM_ERROR scoreboard.sv(74) @ 465: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 465: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0xe, WINC=1
+# UVM_INFO write_monitor.sv(32) @ 485: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xe, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 485: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xe, WINC=1
+# UVM_INFO async_fifo_write_seq.sv(13) @ 485: uvm_test_top.env_o.wrt_agt.seqr@@w_seq [WRITE_SEQ] WRITE -> Data: 0xe
+# UVM_ERROR scoreboard.sv(74) @ 485: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 485: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x80, WINC=1
+# UVM_INFO read_monitor.sv(33) @ 490: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=0, DATA=0xfd
+# UVM_INFO subscriber.sv(48) @ 490: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xfd, RINC=1
+# UVM_INFO async_fifo_read_seq.sv(13) @ 490: uvm_test_top.env_o.rd_agt.seqr@@r_seq [READ_SEQ] Read sequence generated: 
+# UVM_INFO scoreboard.sv(87) @ 490: uvm_test_top.env_o.scb [SCOREBOARD-READ] READ DATA MATCH: 253, PASS
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 490: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 505: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x80, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 505: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x80, WINC=1
+# UVM_INFO async_fifo_write_seq.sv(13) @ 505: uvm_test_top.env_o.wrt_agt.seqr@@w_seq [WRITE_SEQ] WRITE -> Data: 0x80
+# UVM_ERROR scoreboard.sv(74) @ 505: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 505: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x6e, WINC=1
+# UVM_INFO write_monitor.sv(32) @ 525: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x6e, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 525: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x6e, WINC=1
+# UVM_INFO async_fifo_write_seq.sv(13) @ 525: uvm_test_top.env_o.wrt_agt.seqr@@w_seq [WRITE_SEQ] WRITE -> Data: 0x6e
+# UVM_ERROR scoreboard.sv(74) @ 525: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 525: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x76, WINC=1
+# UVM_INFO read_monitor.sv(33) @ 530: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=0, DATA=0xb0
+# UVM_INFO subscriber.sv(48) @ 530: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xb0, RINC=1
+# UVM_INFO async_fifo_read_seq.sv(13) @ 530: uvm_test_top.env_o.rd_agt.seqr@@r_seq [READ_SEQ] Read sequence generated: 
+# UVM_ERROR scoreboard.sv(103) @ 530: uvm_test_top.env_o.scb [SCOREBOARD-READ] DUT failed to assert rempty when empty
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 530: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 545: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x76, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 545: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x76, WINC=1
+# UVM_INFO async_fifo_write_seq.sv(13) @ 545: uvm_test_top.env_o.wrt_agt.seqr@@w_seq [WRITE_SEQ] WRITE -> Data: 0x76
+# UVM_ERROR scoreboard.sv(74) @ 545: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 545: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x4f, WINC=1
+# UVM_INFO write_monitor.sv(32) @ 565: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x4f, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 565: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x4f, WINC=1
+# UVM_INFO async_fifo_write_seq.sv(13) @ 565: uvm_test_top.env_o.wrt_agt.seqr@@w_seq [WRITE_SEQ] WRITE -> Data: 0x4f
+# UVM_ERROR scoreboard.sv(74) @ 565: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 565: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x6, WINC=1
+# UVM_INFO read_monitor.sv(33) @ 570: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=0, DATA=0xe1
+# UVM_INFO subscriber.sv(48) @ 570: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xe1, RINC=1
+# UVM_INFO async_fifo_read_seq.sv(13) @ 570: uvm_test_top.env_o.rd_agt.seqr@@r_seq [READ_SEQ] Read sequence generated: 
+# UVM_ERROR scoreboard.sv(103) @ 570: uvm_test_top.env_o.scb [SCOREBOARD-READ] DUT failed to assert rempty when empty
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 570: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 585: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x6, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 585: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x6, WINC=1
+# UVM_INFO async_fifo_write_seq.sv(13) @ 585: uvm_test_top.env_o.wrt_agt.seqr@@w_seq [WRITE_SEQ] WRITE -> Data: 0x6
+# UVM_ERROR scoreboard.sv(74) @ 585: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 585: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x4d, WINC=1
+# UVM_INFO write_monitor.sv(32) @ 605: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x4d, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 605: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x4d, WINC=1
+# UVM_INFO async_fifo_write_seq.sv(13) @ 605: uvm_test_top.env_o.wrt_agt.seqr@@w_seq [WRITE_SEQ] WRITE -> Data: 0x4d
+# UVM_ERROR scoreboard.sv(74) @ 605: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 605: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0xea, WINC=1
+# UVM_INFO read_monitor.sv(33) @ 610: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=0, DATA=0x2a
+# UVM_INFO subscriber.sv(48) @ 610: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0x2a, RINC=1
+# UVM_INFO async_fifo_read_seq.sv(13) @ 610: uvm_test_top.env_o.rd_agt.seqr@@r_seq [READ_SEQ] Read sequence generated: 
+# UVM_ERROR scoreboard.sv(103) @ 610: uvm_test_top.env_o.scb [SCOREBOARD-READ] DUT failed to assert rempty when empty
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 610: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 625: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xea, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 625: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xea, WINC=1
+# UVM_INFO async_fifo_write_seq.sv(13) @ 625: uvm_test_top.env_o.wrt_agt.seqr@@w_seq [WRITE_SEQ] WRITE -> Data: 0xea
+# UVM_ERROR scoreboard.sv(74) @ 625: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_monitor.sv(32) @ 645: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xea, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 645: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xea, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 645: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_monitor.sv(33) @ 650: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=0, DATA=0x32
+# UVM_INFO subscriber.sv(48) @ 650: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0x32, RINC=1
+# UVM_INFO async_fifo_read_seq.sv(13) @ 650: uvm_test_top.env_o.rd_agt.seqr@@r_seq [READ_SEQ] Read sequence generated: 
+# UVM_ERROR scoreboard.sv(103) @ 650: uvm_test_top.env_o.scb [SCOREBOARD-READ] DUT failed to assert rempty when empty
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 650: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 665: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xea, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 665: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xea, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 665: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_monitor.sv(32) @ 685: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xea, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 685: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xea, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 685: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_monitor.sv(33) @ 690: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=0, DATA=0xd4
+# UVM_INFO subscriber.sv(48) @ 690: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xd4, RINC=1
+# UVM_INFO async_fifo_read_seq.sv(13) @ 690: uvm_test_top.env_o.rd_agt.seqr@@r_seq [READ_SEQ] Read sequence generated: 
+# UVM_ERROR scoreboard.sv(103) @ 690: uvm_test_top.env_o.scb [SCOREBOARD-READ] DUT failed to assert rempty when empty
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 690: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 705: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xea, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 705: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xea, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 705: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_monitor.sv(32) @ 725: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xea, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 725: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xea, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 725: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_monitor.sv(33) @ 730: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=0, DATA=0x1c
+# UVM_INFO subscriber.sv(48) @ 730: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0x1c, RINC=1
+# UVM_INFO async_fifo_read_seq.sv(13) @ 730: uvm_test_top.env_o.rd_agt.seqr@@r_seq [READ_SEQ] Read sequence generated: 
+# UVM_ERROR scoreboard.sv(103) @ 730: uvm_test_top.env_o.scb [SCOREBOARD-READ] DUT failed to assert rempty when empty
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 730: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 745: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xea, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 745: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xea, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 745: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_monitor.sv(32) @ 765: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xea, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 765: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xea, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 765: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_monitor.sv(33) @ 770: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=0, DATA=0x80
+# UVM_INFO subscriber.sv(48) @ 770: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0x80, RINC=1
+# UVM_INFO async_fifo_read_seq.sv(13) @ 770: uvm_test_top.env_o.rd_agt.seqr@@r_seq [READ_SEQ] Read sequence generated: 
+# UVM_ERROR scoreboard.sv(103) @ 770: uvm_test_top.env_o.scb [SCOREBOARD-READ] DUT failed to assert rempty when empty
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 770: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 785: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xea, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 785: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xea, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 785: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_monitor.sv(32) @ 805: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xea, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 805: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xea, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 805: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_monitor.sv(33) @ 810: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=0, DATA=0x76
+# UVM_INFO subscriber.sv(48) @ 810: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0x76, RINC=1
+# UVM_INFO async_fifo_read_seq.sv(13) @ 810: uvm_test_top.env_o.rd_agt.seqr@@r_seq [READ_SEQ] Read sequence generated: 
+# UVM_ERROR scoreboard.sv(103) @ 810: uvm_test_top.env_o.scb [SCOREBOARD-READ] DUT failed to assert rempty when empty
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 810: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 825: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xea, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 825: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xea, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 825: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_monitor.sv(32) @ 845: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xea, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 845: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xea, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 845: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_monitor.sv(33) @ 850: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=0, DATA=0x6
+# UVM_INFO subscriber.sv(48) @ 850: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0x6, RINC=1
+# UVM_INFO async_fifo_read_seq.sv(13) @ 850: uvm_test_top.env_o.rd_agt.seqr@@r_seq [READ_SEQ] Read sequence generated: 
+# UVM_ERROR scoreboard.sv(103) @ 850: uvm_test_top.env_o.scb [SCOREBOARD-READ] DUT failed to assert rempty when empty
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 850: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 865: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xea, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 865: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xea, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 865: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_monitor.sv(32) @ 885: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xea, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 885: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xea, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 885: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_monitor.sv(33) @ 890: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=0, DATA=0xea
+# UVM_INFO subscriber.sv(48) @ 890: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xea, RINC=1
+# UVM_INFO async_fifo_read_seq.sv(13) @ 890: uvm_test_top.env_o.rd_agt.seqr@@r_seq [READ_SEQ] Read sequence generated: 
+# UVM_ERROR scoreboard.sv(103) @ 890: uvm_test_top.env_o.scb [SCOREBOARD-READ] DUT failed to assert rempty when empty
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 890: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 905: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xea, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 905: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xea, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 905: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_monitor.sv(32) @ 925: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xea, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 925: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xea, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 925: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_monitor.sv(33) @ 930: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=0, DATA=0xea
+# UVM_INFO subscriber.sv(48) @ 930: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xea, RINC=1
+# UVM_INFO async_fifo_read_seq.sv(13) @ 930: uvm_test_top.env_o.rd_agt.seqr@@r_seq [READ_SEQ] Read sequence generated: 
+# UVM_ERROR scoreboard.sv(103) @ 930: uvm_test_top.env_o.scb [SCOREBOARD-READ] DUT failed to assert rempty when empty
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 930: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 945: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xea, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 945: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xea, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 945: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_monitor.sv(32) @ 965: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xea, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 965: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xea, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 965: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_monitor.sv(33) @ 970: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=0, DATA=0xea
+# UVM_INFO subscriber.sv(48) @ 970: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xea, RINC=1
+# UVM_INFO async_fifo_read_seq.sv(13) @ 970: uvm_test_top.env_o.rd_agt.seqr@@r_seq [READ_SEQ] Read sequence generated: 
+# UVM_ERROR scoreboard.sv(103) @ 970: uvm_test_top.env_o.scb [SCOREBOARD-READ] DUT failed to assert rempty when empty
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 970: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 985: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xea, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 985: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xea, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 985: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_monitor.sv(32) @ 1005: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xea, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 1005: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xea, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 1005: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_monitor.sv(33) @ 1010: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=0, DATA=0xea
+# UVM_INFO subscriber.sv(48) @ 1010: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xea, RINC=1
+# UVM_INFO async_fifo_read_seq.sv(13) @ 1010: uvm_test_top.env_o.rd_agt.seqr@@r_seq [READ_SEQ] Read sequence generated: 
+# UVM_ERROR scoreboard.sv(103) @ 1010: uvm_test_top.env_o.scb [SCOREBOARD-READ] DUT failed to assert rempty when empty
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 1010: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 1025: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xea, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 1025: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xea, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 1025: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_monitor.sv(32) @ 1045: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xea, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 1045: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xea, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 1045: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_monitor.sv(33) @ 1050: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=0, DATA=0xea
+# UVM_INFO subscriber.sv(48) @ 1050: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xea, RINC=1
+# UVM_INFO async_fifo_read_seq.sv(13) @ 1050: uvm_test_top.env_o.rd_agt.seqr@@r_seq [READ_SEQ] Read sequence generated: 
+# UVM_ERROR scoreboard.sv(103) @ 1050: uvm_test_top.env_o.scb [SCOREBOARD-READ] DUT failed to assert rempty when empty
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 1050: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 1065: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xea, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 1065: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xea, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 1065: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_monitor.sv(32) @ 1085: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xea, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 1085: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xea, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 1085: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_monitor.sv(33) @ 1090: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=0, DATA=0xea
+# UVM_INFO subscriber.sv(48) @ 1090: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xea, RINC=1
+# UVM_INFO async_fifo_read_seq.sv(13) @ 1090: uvm_test_top.env_o.rd_agt.seqr@@r_seq [READ_SEQ] Read sequence generated: 
+# UVM_ERROR scoreboard.sv(103) @ 1090: uvm_test_top.env_o.scb [SCOREBOARD-READ] DUT failed to assert rempty when empty
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 1090: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 1105: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xea, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 1105: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xea, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 1105: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_monitor.sv(32) @ 1125: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xea, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 1125: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xea, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 1125: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_monitor.sv(33) @ 1130: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=0, DATA=0xea
+# UVM_INFO subscriber.sv(48) @ 1130: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xea, RINC=1
+# UVM_INFO async_fifo_read_seq.sv(13) @ 1130: uvm_test_top.env_o.rd_agt.seqr@@r_seq [READ_SEQ] Read sequence generated: 
+# UVM_ERROR scoreboard.sv(103) @ 1130: uvm_test_top.env_o.scb [SCOREBOARD-READ] DUT failed to assert rempty when empty
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 1130: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 1145: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xea, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 1145: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xea, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 1145: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_monitor.sv(32) @ 1165: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xea, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 1165: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xea, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 1165: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_monitor.sv(33) @ 1170: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=0, DATA=0xea
+# UVM_INFO subscriber.sv(48) @ 1170: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xea, RINC=1
+# UVM_INFO async_fifo_read_seq.sv(13) @ 1170: uvm_test_top.env_o.rd_agt.seqr@@r_seq [READ_SEQ] Read sequence generated: 
+# UVM_ERROR scoreboard.sv(103) @ 1170: uvm_test_top.env_o.scb [SCOREBOARD-READ] DUT failed to assert rempty when empty
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 1170: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 1185: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xea, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 1185: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xea, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 1185: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_monitor.sv(32) @ 1205: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xea, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 1205: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xea, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 1205: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_monitor.sv(33) @ 1210: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=0, DATA=0xea
+# UVM_INFO subscriber.sv(48) @ 1210: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xea, RINC=1
+# UVM_INFO async_fifo_read_seq.sv(13) @ 1210: uvm_test_top.env_o.rd_agt.seqr@@r_seq [READ_SEQ] Read sequence generated: 
+# UVM_ERROR scoreboard.sv(103) @ 1210: uvm_test_top.env_o.scb [SCOREBOARD-READ] DUT failed to assert rempty when empty
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 1210: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 1225: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xea, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 1225: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xea, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 1225: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_monitor.sv(32) @ 1245: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xea, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 1245: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xea, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 1245: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_monitor.sv(33) @ 1250: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=0, DATA=0xea
+# UVM_INFO subscriber.sv(48) @ 1250: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xea, RINC=1
+# UVM_INFO async_fifo_read_seq.sv(13) @ 1250: uvm_test_top.env_o.rd_agt.seqr@@r_seq [READ_SEQ] Read sequence generated: 
+# UVM_ERROR scoreboard.sv(103) @ 1250: uvm_test_top.env_o.scb [SCOREBOARD-READ] DUT failed to assert rempty when empty
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 1250: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x95, WINC=1
+# UVM_INFO read_driver.sv(25) @ 1250: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=0
+# UVM_INFO write_monitor.sv(32) @ 1265: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x95, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 1265: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x95, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 1265: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 1265: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x87, WINC=1
+# UVM_INFO write_monitor.sv(32) @ 1285: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x87, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 1285: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x87, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 1285: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 1285: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x20, WINC=1
+# UVM_INFO read_monitor.sv(33) @ 1290: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=0, REMPTY=0, DATA=0xea
+# UVM_INFO subscriber.sv(48) @ 1290: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xea, RINC=0
+# UVM_INFO read_driver.sv(25) @ 1290: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=0
+# UVM_INFO write_monitor.sv(32) @ 1305: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x20, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 1305: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x20, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 1305: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 1305: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x6b, WINC=1
+# UVM_INFO write_monitor.sv(32) @ 1325: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x6b, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 1325: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x6b, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 1325: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 1325: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0xe1, WINC=1
+# UVM_INFO read_monitor.sv(33) @ 1330: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=0, REMPTY=0, DATA=0xea
+# UVM_INFO subscriber.sv(48) @ 1330: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xea, RINC=0
+# UVM_INFO read_driver.sv(25) @ 1330: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=0
+# UVM_INFO write_monitor.sv(32) @ 1345: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xe1, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 1345: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xe1, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 1345: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 1345: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0xe4, WINC=1
+# UVM_INFO write_monitor.sv(32) @ 1365: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xe4, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 1365: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xe4, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 1365: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 1365: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0xb9, WINC=1
+# UVM_INFO read_monitor.sv(33) @ 1370: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=0, REMPTY=0, DATA=0xea
+# UVM_INFO subscriber.sv(48) @ 1370: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xea, RINC=0
+# UVM_INFO read_driver.sv(25) @ 1370: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=0
+# UVM_INFO write_monitor.sv(32) @ 1385: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xb9, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 1385: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xb9, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 1385: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 1385: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x4, WINC=1
+# UVM_INFO write_monitor.sv(32) @ 1405: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x4, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 1405: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x4, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 1405: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 1405: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0xc2, WINC=1
+# UVM_INFO read_monitor.sv(33) @ 1410: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=0, REMPTY=0, DATA=0xea
+# UVM_INFO subscriber.sv(48) @ 1410: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xea, RINC=0
+# UVM_INFO read_driver.sv(25) @ 1410: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=0
+# UVM_INFO write_monitor.sv(32) @ 1425: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xc2, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 1425: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xc2, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 1425: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 1425: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x84, WINC=1
+# UVM_INFO write_monitor.sv(32) @ 1445: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x84, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 1445: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x84, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 1445: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 1445: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x53, WINC=1
+# UVM_INFO read_monitor.sv(33) @ 1450: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=0, REMPTY=0, DATA=0xea
+# UVM_INFO subscriber.sv(48) @ 1450: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xea, RINC=0
+# UVM_INFO read_driver.sv(25) @ 1450: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=0
+# UVM_INFO write_monitor.sv(32) @ 1465: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x53, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 1465: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x53, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 1465: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 1465: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x2e, WINC=1
+# UVM_INFO write_monitor.sv(32) @ 1485: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x2e, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 1485: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x2e, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 1485: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 1485: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0xa6, WINC=1
+# UVM_INFO read_monitor.sv(33) @ 1490: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=0, REMPTY=0, DATA=0xea
+# UVM_INFO subscriber.sv(48) @ 1490: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xea, RINC=0
+# UVM_INFO read_driver.sv(25) @ 1490: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=0
+# UVM_INFO write_monitor.sv(32) @ 1505: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xa6, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 1505: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xa6, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 1505: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 1505: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0xd0, WINC=1
+# UVM_INFO write_monitor.sv(32) @ 1525: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xd0, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 1525: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xd0, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 1525: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 1525: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x73, WINC=1
+# UVM_INFO read_monitor.sv(33) @ 1530: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=0, REMPTY=0, DATA=0xea
+# UVM_INFO subscriber.sv(48) @ 1530: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xea, RINC=0
+# UVM_INFO read_driver.sv(25) @ 1530: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=0
+# UVM_INFO write_monitor.sv(32) @ 1545: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x73, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 1545: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x73, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 1545: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 1545: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x3, WINC=1
+# UVM_INFO write_monitor.sv(32) @ 1565: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x3, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 1565: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x3, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 1565: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 1565: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x1c, WINC=1
+# UVM_INFO read_monitor.sv(33) @ 1570: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=0, REMPTY=0, DATA=0xea
+# UVM_INFO subscriber.sv(48) @ 1570: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xea, RINC=0
+# UVM_INFO read_driver.sv(25) @ 1570: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=0
+# UVM_INFO write_monitor.sv(32) @ 1585: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x1c, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 1585: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x1c, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 1585: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 1585: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x86, WINC=1
+# UVM_INFO write_monitor.sv(32) @ 1605: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x86, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 1605: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x86, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 1605: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 1605: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x36, WINC=1
+# UVM_INFO read_monitor.sv(33) @ 1610: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=0, REMPTY=0, DATA=0xea
+# UVM_INFO subscriber.sv(48) @ 1610: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xea, RINC=0
+# UVM_INFO read_driver.sv(25) @ 1610: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=0
+# UVM_INFO write_monitor.sv(32) @ 1625: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x36, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 1625: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x36, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 1625: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 1625: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x9e, WINC=1
+# UVM_INFO write_monitor.sv(32) @ 1645: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x9e, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 1645: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x9e, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 1645: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 1645: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0xee, WINC=1
+# UVM_INFO read_monitor.sv(33) @ 1650: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=0, REMPTY=0, DATA=0xea
+# UVM_INFO subscriber.sv(48) @ 1650: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xea, RINC=0
+# UVM_INFO read_driver.sv(25) @ 1650: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=0
+# UVM_INFO write_monitor.sv(32) @ 1665: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xee, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 1665: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xee, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 1665: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 1665: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x45, WINC=1
+# UVM_INFO write_monitor.sv(32) @ 1685: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x45, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 1685: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x45, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 1685: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 1685: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x74, WINC=1
+# UVM_INFO read_monitor.sv(33) @ 1690: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=0, REMPTY=0, DATA=0xea
+# UVM_INFO subscriber.sv(48) @ 1690: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xea, RINC=0
+# UVM_INFO read_driver.sv(25) @ 1690: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=0
+# UVM_INFO write_monitor.sv(32) @ 1705: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x74, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 1705: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x74, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 1705: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 1705: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x63, WINC=1
+# UVM_INFO write_monitor.sv(32) @ 1725: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x63, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 1725: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x63, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 1725: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 1725: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0xce, WINC=1
+# UVM_INFO read_monitor.sv(33) @ 1730: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=0, REMPTY=0, DATA=0xea
+# UVM_INFO subscriber.sv(48) @ 1730: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xea, RINC=0
+# UVM_INFO read_driver.sv(25) @ 1730: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=0
+# UVM_INFO write_monitor.sv(32) @ 1745: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xce, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 1745: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xce, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 1745: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 1745: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0xea, WINC=1
+# UVM_INFO write_monitor.sv(32) @ 1765: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xea, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 1765: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xea, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 1765: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 1765: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0xf3, WINC=1
+# UVM_INFO read_monitor.sv(33) @ 1770: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=0, REMPTY=0, DATA=0xea
+# UVM_INFO subscriber.sv(48) @ 1770: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xea, RINC=0
+# UVM_INFO read_driver.sv(25) @ 1770: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=0
+# UVM_INFO write_monitor.sv(32) @ 1785: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xf3, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 1785: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xf3, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 1785: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 1785: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0xe2, WINC=1
+# UVM_INFO write_monitor.sv(32) @ 1805: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xe2, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 1805: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xe2, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 1805: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 1805: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x8d, WINC=1
+# UVM_INFO read_monitor.sv(33) @ 1810: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=0, REMPTY=0, DATA=0xea
+# UVM_INFO subscriber.sv(48) @ 1810: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xea, RINC=0
+# UVM_INFO read_driver.sv(25) @ 1810: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=0
+# UVM_INFO write_monitor.sv(32) @ 1825: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x8d, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 1825: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x8d, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 1825: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 1825: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x15, WINC=1
+# UVM_INFO write_monitor.sv(32) @ 1845: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x15, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 1845: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x15, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 1845: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_monitor.sv(33) @ 1850: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=0, REMPTY=0, DATA=0xea
+# UVM_INFO subscriber.sv(48) @ 1850: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xea, RINC=0
+# UVM_INFO read_driver.sv(25) @ 1850: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=0
+# UVM_INFO write_monitor.sv(32) @ 1865: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x15, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 1865: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x15, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 1865: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_monitor.sv(32) @ 1885: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x15, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 1885: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x15, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 1885: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_monitor.sv(33) @ 1890: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=0, REMPTY=0, DATA=0xea
+# UVM_INFO subscriber.sv(48) @ 1890: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xea, RINC=0
+# UVM_INFO read_driver.sv(25) @ 1890: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=0
+# UVM_INFO write_monitor.sv(32) @ 1905: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x15, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 1905: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x15, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 1905: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_monitor.sv(32) @ 1925: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x15, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 1925: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x15, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 1925: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_monitor.sv(33) @ 1930: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=0, REMPTY=0, DATA=0xea
+# UVM_INFO subscriber.sv(48) @ 1930: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xea, RINC=0
+# UVM_INFO read_driver.sv(25) @ 1930: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=0
+# UVM_INFO write_monitor.sv(32) @ 1945: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x15, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 1945: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x15, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 1945: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_monitor.sv(32) @ 1965: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x15, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 1965: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x15, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 1965: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_monitor.sv(33) @ 1970: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=0, REMPTY=0, DATA=0xea
+# UVM_INFO subscriber.sv(48) @ 1970: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xea, RINC=0
+# UVM_INFO read_driver.sv(25) @ 1970: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=0
+# UVM_INFO write_monitor.sv(32) @ 1985: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x15, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 1985: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x15, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 1985: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_monitor.sv(32) @ 2005: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x15, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 2005: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x15, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 2005: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_monitor.sv(33) @ 2010: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=0, REMPTY=0, DATA=0xea
+# UVM_INFO subscriber.sv(48) @ 2010: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xea, RINC=0
+# UVM_INFO read_driver.sv(25) @ 2010: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=0
+# UVM_INFO write_monitor.sv(32) @ 2025: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x15, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 2025: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x15, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 2025: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_monitor.sv(32) @ 2045: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x15, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 2045: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x15, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 2045: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_monitor.sv(33) @ 2050: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=0, REMPTY=0, DATA=0xea
+# UVM_INFO subscriber.sv(48) @ 2050: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xea, RINC=0
+# UVM_INFO read_driver.sv(25) @ 2050: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=0
+# UVM_INFO write_monitor.sv(32) @ 2065: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x15, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 2065: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x15, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 2065: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_monitor.sv(32) @ 2085: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x15, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 2085: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x15, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 2085: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_monitor.sv(33) @ 2090: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=0, REMPTY=0, DATA=0xea
+# UVM_INFO subscriber.sv(48) @ 2090: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xea, RINC=0
+# UVM_INFO read_driver.sv(25) @ 2090: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=0
+# UVM_INFO write_monitor.sv(32) @ 2105: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x15, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 2105: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x15, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 2105: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_monitor.sv(32) @ 2125: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x15, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 2125: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x15, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 2125: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_monitor.sv(33) @ 2130: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=0, REMPTY=0, DATA=0xea
+# UVM_INFO subscriber.sv(48) @ 2130: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xea, RINC=0
+# UVM_INFO read_driver.sv(25) @ 2130: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=0
+# UVM_INFO write_monitor.sv(32) @ 2145: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x15, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 2145: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x15, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 2145: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_monitor.sv(32) @ 2165: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x15, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 2165: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x15, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 2165: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_monitor.sv(33) @ 2170: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=0, REMPTY=0, DATA=0xea
+# UVM_INFO subscriber.sv(48) @ 2170: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xea, RINC=0
+# UVM_INFO read_driver.sv(25) @ 2170: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=0
+# UVM_INFO write_monitor.sv(32) @ 2185: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x15, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 2185: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x15, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 2185: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_monitor.sv(32) @ 2205: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x15, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 2205: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x15, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 2205: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_monitor.sv(33) @ 2210: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=0, REMPTY=0, DATA=0xea
+# UVM_INFO subscriber.sv(48) @ 2210: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xea, RINC=0
+# UVM_INFO read_driver.sv(25) @ 2210: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=0
+# UVM_INFO write_monitor.sv(32) @ 2225: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x15, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 2225: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x15, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 2225: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_monitor.sv(32) @ 2245: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x15, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 2245: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x15, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 2245: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_monitor.sv(33) @ 2250: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=0, REMPTY=0, DATA=0xea
+# UVM_INFO subscriber.sv(48) @ 2250: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xea, RINC=0
+# UVM_INFO read_driver.sv(25) @ 2250: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=0
+# UVM_INFO write_monitor.sv(32) @ 2265: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x15, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 2265: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x15, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 2265: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_monitor.sv(32) @ 2285: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x15, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 2285: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x15, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 2285: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_monitor.sv(33) @ 2290: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=0, REMPTY=0, DATA=0xea
+# UVM_INFO subscriber.sv(48) @ 2290: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xea, RINC=0
+# UVM_INFO read_driver.sv(25) @ 2290: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=0
+# UVM_INFO write_monitor.sv(32) @ 2305: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x15, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 2305: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x15, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 2305: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_monitor.sv(32) @ 2325: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x15, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 2325: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x15, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 2325: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_monitor.sv(33) @ 2330: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=0, REMPTY=0, DATA=0xea
+# UVM_INFO subscriber.sv(48) @ 2330: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xea, RINC=0
+# UVM_INFO read_driver.sv(25) @ 2330: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=0
+# UVM_INFO write_monitor.sv(32) @ 2345: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x15, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 2345: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x15, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 2345: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_monitor.sv(32) @ 2365: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x15, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 2365: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x15, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 2365: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_monitor.sv(33) @ 2370: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=0, REMPTY=0, DATA=0xea
+# UVM_INFO subscriber.sv(48) @ 2370: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xea, RINC=0
+# UVM_INFO read_driver.sv(25) @ 2370: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=0
+# UVM_INFO write_monitor.sv(32) @ 2385: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x15, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 2385: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x15, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 2385: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_monitor.sv(32) @ 2405: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x15, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 2405: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x15, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 2405: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_monitor.sv(33) @ 2410: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=0, REMPTY=0, DATA=0xea
+# UVM_INFO subscriber.sv(48) @ 2410: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xea, RINC=0
+# UVM_INFO read_driver.sv(25) @ 2410: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=0
+# UVM_INFO write_monitor.sv(32) @ 2425: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x15, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 2425: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x15, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 2425: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_monitor.sv(32) @ 2445: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x15, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 2445: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x15, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 2445: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_monitor.sv(33) @ 2450: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=0, REMPTY=0, DATA=0xea
+# UVM_INFO subscriber.sv(48) @ 2450: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xea, RINC=0
+# UVM_INFO write_monitor.sv(32) @ 2465: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x15, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 2465: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x15, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 2465: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_monitor.sv(32) @ 2485: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x15, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 2485: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x15, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 2485: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_monitor.sv(33) @ 2490: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=0, REMPTY=0, DATA=0xea
+# UVM_INFO subscriber.sv(48) @ 2490: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xea, RINC=0
+# UVM_INFO write_monitor.sv(32) @ 2505: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x15, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 2505: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x15, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 2505: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_monitor.sv(32) @ 2525: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x15, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 2525: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x15, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 2525: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_monitor.sv(33) @ 2530: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=0, REMPTY=0, DATA=0xea
+# UVM_INFO subscriber.sv(48) @ 2530: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xea, RINC=0
+# UVM_INFO write_monitor.sv(32) @ 2545: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x15, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 2545: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x15, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 2545: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 2550: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_driver.sv(25) @ 2550: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x17, WINC=0
+# UVM_INFO write_monitor.sv(32) @ 2565: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x17, WINC=0, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 2565: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x17, WINC=0
+# UVM_INFO write_driver.sv(25) @ 2565: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0xf5, WINC=0
+# UVM_INFO read_monitor.sv(33) @ 2570: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=0, DATA=0xea
+# UVM_INFO subscriber.sv(48) @ 2570: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xea, RINC=1
+# UVM_ERROR scoreboard.sv(103) @ 2570: uvm_test_top.env_o.scb [SCOREBOARD-READ] DUT failed to assert rempty when empty
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 2570: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 2585: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xf5, WINC=0, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 2585: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xf5, WINC=0
+# UVM_INFO write_driver.sv(25) @ 2585: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x8a, WINC=0
+# UVM_INFO write_monitor.sv(32) @ 2605: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x8a, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 2605: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x8a, WINC=0
+# UVM_INFO write_driver.sv(25) @ 2605: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x76, WINC=0
+# UVM_INFO read_monitor.sv(33) @ 2610: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=0, DATA=0xea
+# UVM_INFO subscriber.sv(48) @ 2610: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xea, RINC=1
+# UVM_ERROR scoreboard.sv(103) @ 2610: uvm_test_top.env_o.scb [SCOREBOARD-READ] DUT failed to assert rempty when empty
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 2610: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 2625: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x76, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 2625: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x76, WINC=0
+# UVM_INFO write_driver.sv(25) @ 2625: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0xc9, WINC=0
+# UVM_INFO write_monitor.sv(32) @ 2645: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xc9, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 2645: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xc9, WINC=0
+# UVM_INFO write_driver.sv(25) @ 2645: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0xea, WINC=0
+# UVM_INFO read_monitor.sv(33) @ 2650: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=0, DATA=0xea
+# UVM_INFO subscriber.sv(48) @ 2650: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xea, RINC=1
+# UVM_ERROR scoreboard.sv(103) @ 2650: uvm_test_top.env_o.scb [SCOREBOARD-READ] DUT failed to assert rempty when empty
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 2650: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 2665: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xea, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 2665: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xea, WINC=0
+# UVM_INFO write_driver.sv(25) @ 2665: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x55, WINC=0
+# UVM_INFO write_monitor.sv(32) @ 2685: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x55, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 2685: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x55, WINC=0
+# UVM_INFO write_driver.sv(25) @ 2685: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0xd2, WINC=0
+# UVM_INFO read_monitor.sv(33) @ 2690: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=0, DATA=0xea
+# UVM_INFO subscriber.sv(48) @ 2690: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xea, RINC=1
+# UVM_ERROR scoreboard.sv(103) @ 2690: uvm_test_top.env_o.scb [SCOREBOARD-READ] DUT failed to assert rempty when empty
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 2690: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 2705: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xd2, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 2705: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xd2, WINC=0
+# UVM_INFO write_driver.sv(25) @ 2705: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0xd1, WINC=0
+# UVM_INFO write_monitor.sv(32) @ 2725: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xd1, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 2725: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xd1, WINC=0
+# UVM_INFO write_driver.sv(25) @ 2725: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x4a, WINC=0
+# UVM_INFO read_monitor.sv(33) @ 2730: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=0, DATA=0xea
+# UVM_INFO subscriber.sv(48) @ 2730: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xea, RINC=1
+# UVM_ERROR scoreboard.sv(103) @ 2730: uvm_test_top.env_o.scb [SCOREBOARD-READ] DUT failed to assert rempty when empty
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 2730: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 2745: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x4a, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 2745: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x4a, WINC=0
+# UVM_INFO write_driver.sv(25) @ 2745: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0xc7, WINC=0
+# UVM_INFO write_monitor.sv(32) @ 2765: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xc7, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 2765: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xc7, WINC=0
+# UVM_INFO write_driver.sv(25) @ 2765: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x78, WINC=0
+# UVM_INFO read_monitor.sv(33) @ 2770: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=0, DATA=0xea
+# UVM_INFO subscriber.sv(48) @ 2770: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xea, RINC=1
+# UVM_ERROR scoreboard.sv(103) @ 2770: uvm_test_top.env_o.scb [SCOREBOARD-READ] DUT failed to assert rempty when empty
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 2770: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 2785: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x78, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 2785: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x78, WINC=0
+# UVM_INFO write_driver.sv(25) @ 2785: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x93, WINC=0
+# UVM_INFO write_monitor.sv(32) @ 2805: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x93, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 2805: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x93, WINC=0
+# UVM_INFO write_driver.sv(25) @ 2805: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0xcc, WINC=0
+# UVM_INFO read_monitor.sv(33) @ 2810: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=0, DATA=0xea
+# UVM_INFO subscriber.sv(48) @ 2810: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xea, RINC=1
+# UVM_ERROR scoreboard.sv(103) @ 2810: uvm_test_top.env_o.scb [SCOREBOARD-READ] DUT failed to assert rempty when empty
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 2810: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 2825: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xcc, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 2825: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xcc, WINC=0
+# UVM_INFO write_driver.sv(25) @ 2825: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x4a, WINC=0
+# UVM_INFO write_monitor.sv(32) @ 2845: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x4a, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 2845: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x4a, WINC=0
+# UVM_INFO write_driver.sv(25) @ 2845: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x46, WINC=0
+# UVM_INFO read_monitor.sv(33) @ 2850: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=0, DATA=0x87
+# UVM_INFO subscriber.sv(48) @ 2850: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0x87, RINC=1
+# UVM_ERROR scoreboard.sv(103) @ 2850: uvm_test_top.env_o.scb [SCOREBOARD-READ] DUT failed to assert rempty when empty
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 2850: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 2865: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x46, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 2865: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x46, WINC=0
+# UVM_INFO write_driver.sv(25) @ 2865: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x72, WINC=0
+# UVM_INFO write_monitor.sv(32) @ 2885: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x72, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 2885: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x72, WINC=0
+# UVM_INFO write_driver.sv(25) @ 2885: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0xa4, WINC=0
+# UVM_INFO read_monitor.sv(33) @ 2890: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=1, DATA=0xea
+# UVM_INFO subscriber.sv(48) @ 2890: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xea, RINC=1
+# UVM_INFO scoreboard.sv(98) @ 2890: uvm_test_top.env_o.scb [SCOREBOARD-READ] READ ignored, model empty (size=0), PASS
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 2890: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 2905: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xa4, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 2905: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xa4, WINC=0
+# UVM_INFO write_driver.sv(25) @ 2905: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0xe7, WINC=0
+# UVM_INFO write_monitor.sv(32) @ 2925: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xe7, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 2925: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xe7, WINC=0
+# UVM_INFO write_driver.sv(25) @ 2925: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x4a, WINC=0
+# UVM_INFO read_monitor.sv(33) @ 2930: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=1, DATA=0xea
+# UVM_INFO subscriber.sv(48) @ 2930: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xea, RINC=1
+# UVM_INFO scoreboard.sv(98) @ 2930: uvm_test_top.env_o.scb [SCOREBOARD-READ] READ ignored, model empty (size=0), PASS
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 2930: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 2945: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x4a, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 2945: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x4a, WINC=0
+# UVM_INFO write_driver.sv(25) @ 2945: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x9d, WINC=0
+# UVM_INFO write_monitor.sv(32) @ 2965: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x9d, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 2965: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x9d, WINC=0
+# UVM_INFO write_driver.sv(25) @ 2965: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0xdf, WINC=0
+# UVM_INFO read_monitor.sv(33) @ 2970: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=1, DATA=0xea
+# UVM_INFO subscriber.sv(48) @ 2970: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xea, RINC=1
+# UVM_INFO scoreboard.sv(98) @ 2970: uvm_test_top.env_o.scb [SCOREBOARD-READ] READ ignored, model empty (size=0), PASS
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 2970: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 2985: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xdf, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 2985: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xdf, WINC=0
+# UVM_INFO write_driver.sv(25) @ 2985: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0xd7, WINC=0
+# UVM_INFO write_monitor.sv(32) @ 3005: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xd7, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 3005: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xd7, WINC=0
+# UVM_INFO write_driver.sv(25) @ 3005: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x16, WINC=0
+# UVM_INFO read_monitor.sv(33) @ 3010: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=1, DATA=0xea
+# UVM_INFO subscriber.sv(48) @ 3010: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xea, RINC=1
+# UVM_INFO scoreboard.sv(98) @ 3010: uvm_test_top.env_o.scb [SCOREBOARD-READ] READ ignored, model empty (size=0), PASS
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 3010: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 3025: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x16, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 3025: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x16, WINC=0
+# UVM_INFO write_driver.sv(25) @ 3025: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0xa0, WINC=0
+# UVM_INFO write_monitor.sv(32) @ 3045: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xa0, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 3045: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xa0, WINC=0
+# UVM_INFO write_driver.sv(25) @ 3045: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0xec, WINC=0
+# UVM_INFO read_monitor.sv(33) @ 3050: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=1, DATA=0xea
+# UVM_INFO subscriber.sv(48) @ 3050: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xea, RINC=1
+# UVM_INFO scoreboard.sv(98) @ 3050: uvm_test_top.env_o.scb [SCOREBOARD-READ] READ ignored, model empty (size=0), PASS
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 3050: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 3065: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xec, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 3065: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xec, WINC=0
+# UVM_INFO write_driver.sv(25) @ 3065: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x95, WINC=0
+# UVM_INFO write_monitor.sv(32) @ 3085: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x95, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 3085: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x95, WINC=0
+# UVM_INFO write_driver.sv(25) @ 3085: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x99, WINC=0
+# UVM_INFO read_monitor.sv(33) @ 3090: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=1, DATA=0xea
+# UVM_INFO subscriber.sv(48) @ 3090: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xea, RINC=1
+# UVM_INFO scoreboard.sv(98) @ 3090: uvm_test_top.env_o.scb [SCOREBOARD-READ] READ ignored, model empty (size=0), PASS
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 3090: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 3105: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x99, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 3105: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x99, WINC=0
+# UVM_INFO write_driver.sv(25) @ 3105: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x7e, WINC=0
+# UVM_INFO write_monitor.sv(32) @ 3125: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x7e, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 3125: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x7e, WINC=0
+# UVM_INFO write_driver.sv(25) @ 3125: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x2, WINC=0
+# UVM_INFO read_monitor.sv(33) @ 3130: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=1, DATA=0xea
+# UVM_INFO subscriber.sv(48) @ 3130: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xea, RINC=1
+# UVM_INFO scoreboard.sv(98) @ 3130: uvm_test_top.env_o.scb [SCOREBOARD-READ] READ ignored, model empty (size=0), PASS
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 3130: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 3145: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x2, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 3145: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x2, WINC=0
+# UVM_INFO write_monitor.sv(32) @ 3165: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x2, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 3165: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x2, WINC=0
+# UVM_INFO read_monitor.sv(33) @ 3170: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=1, DATA=0xea
+# UVM_INFO subscriber.sv(48) @ 3170: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xea, RINC=1
+# UVM_INFO scoreboard.sv(98) @ 3170: uvm_test_top.env_o.scb [SCOREBOARD-READ] READ ignored, model empty (size=0), PASS
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 3170: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 3185: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x2, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 3185: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x2, WINC=0
+# UVM_INFO write_monitor.sv(32) @ 3205: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x2, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 3205: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x2, WINC=0
+# UVM_INFO read_monitor.sv(33) @ 3210: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=1, DATA=0xea
+# UVM_INFO subscriber.sv(48) @ 3210: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xea, RINC=1
+# UVM_INFO scoreboard.sv(98) @ 3210: uvm_test_top.env_o.scb [SCOREBOARD-READ] READ ignored, model empty (size=0), PASS
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 3210: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 3225: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x2, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 3225: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x2, WINC=0
+# UVM_INFO write_monitor.sv(32) @ 3245: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x2, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 3245: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x2, WINC=0
+# UVM_INFO read_monitor.sv(33) @ 3250: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=1, DATA=0xea
+# UVM_INFO subscriber.sv(48) @ 3250: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xea, RINC=1
+# UVM_INFO scoreboard.sv(98) @ 3250: uvm_test_top.env_o.scb [SCOREBOARD-READ] READ ignored, model empty (size=0), PASS
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 3250: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 3265: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x2, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 3265: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x2, WINC=0
+# UVM_INFO write_monitor.sv(32) @ 3285: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x2, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 3285: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x2, WINC=0
+# UVM_INFO read_monitor.sv(33) @ 3290: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=1, DATA=0xea
+# UVM_INFO subscriber.sv(48) @ 3290: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xea, RINC=1
+# UVM_INFO scoreboard.sv(98) @ 3290: uvm_test_top.env_o.scb [SCOREBOARD-READ] READ ignored, model empty (size=0), PASS
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 3290: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 3305: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x2, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 3305: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x2, WINC=0
+# UVM_INFO write_monitor.sv(32) @ 3325: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x2, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 3325: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x2, WINC=0
+# UVM_INFO read_monitor.sv(33) @ 3330: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=1, DATA=0xea
+# UVM_INFO subscriber.sv(48) @ 3330: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xea, RINC=1
+# UVM_INFO scoreboard.sv(98) @ 3330: uvm_test_top.env_o.scb [SCOREBOARD-READ] READ ignored, model empty (size=0), PASS
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 3330: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 3345: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x2, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 3345: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x2, WINC=0
+# UVM_INFO write_monitor.sv(32) @ 3365: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x2, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 3365: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x2, WINC=0
+# UVM_INFO read_monitor.sv(33) @ 3370: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=1, DATA=0xea
+# UVM_INFO subscriber.sv(48) @ 3370: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xea, RINC=1
+# UVM_INFO scoreboard.sv(98) @ 3370: uvm_test_top.env_o.scb [SCOREBOARD-READ] READ ignored, model empty (size=0), PASS
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 3370: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 3385: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x2, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 3385: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x2, WINC=0
+# UVM_INFO write_monitor.sv(32) @ 3405: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x2, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 3405: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x2, WINC=0
+# UVM_INFO read_monitor.sv(33) @ 3410: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=1, DATA=0xea
+# UVM_INFO subscriber.sv(48) @ 3410: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xea, RINC=1
+# UVM_INFO scoreboard.sv(98) @ 3410: uvm_test_top.env_o.scb [SCOREBOARD-READ] READ ignored, model empty (size=0), PASS
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 3410: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 3425: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x2, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 3425: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x2, WINC=0
+# UVM_INFO write_monitor.sv(32) @ 3445: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x2, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 3445: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x2, WINC=0
+# UVM_INFO read_monitor.sv(33) @ 3450: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=1, DATA=0xea
+# UVM_INFO subscriber.sv(48) @ 3450: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xea, RINC=1
+# UVM_INFO scoreboard.sv(98) @ 3450: uvm_test_top.env_o.scb [SCOREBOARD-READ] READ ignored, model empty (size=0), PASS
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 3450: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 3465: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x2, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 3465: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x2, WINC=0
+# UVM_INFO write_monitor.sv(32) @ 3485: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x2, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 3485: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x2, WINC=0
+# UVM_INFO read_monitor.sv(33) @ 3490: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=1, DATA=0xea
+# UVM_INFO subscriber.sv(48) @ 3490: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xea, RINC=1
+# UVM_INFO scoreboard.sv(98) @ 3490: uvm_test_top.env_o.scb [SCOREBOARD-READ] READ ignored, model empty (size=0), PASS
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 3490: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 3505: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x2, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 3505: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x2, WINC=0
+# UVM_INFO write_monitor.sv(32) @ 3525: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x2, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 3525: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x2, WINC=0
+# UVM_INFO read_monitor.sv(33) @ 3530: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=1, DATA=0xea
+# UVM_INFO subscriber.sv(48) @ 3530: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xea, RINC=1
+# UVM_INFO scoreboard.sv(98) @ 3530: uvm_test_top.env_o.scb [SCOREBOARD-READ] READ ignored, model empty (size=0), PASS
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 3530: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 3545: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x2, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 3545: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x2, WINC=0
+# UVM_INFO write_monitor.sv(32) @ 3565: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x2, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 3565: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x2, WINC=0
+# UVM_INFO read_monitor.sv(33) @ 3570: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=1, DATA=0xea
+# UVM_INFO subscriber.sv(48) @ 3570: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xea, RINC=1
+# UVM_INFO scoreboard.sv(98) @ 3570: uvm_test_top.env_o.scb [SCOREBOARD-READ] READ ignored, model empty (size=0), PASS
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 3570: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 3585: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x2, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 3585: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x2, WINC=0
+# UVM_INFO write_monitor.sv(32) @ 3605: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x2, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 3605: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x2, WINC=0
+# UVM_INFO read_monitor.sv(33) @ 3610: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=1, DATA=0xea
+# UVM_INFO subscriber.sv(48) @ 3610: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xea, RINC=1
+# UVM_INFO scoreboard.sv(98) @ 3610: uvm_test_top.env_o.scb [SCOREBOARD-READ] READ ignored, model empty (size=0), PASS
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 3610: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 3625: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x2, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 3625: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x2, WINC=0
+# UVM_INFO write_monitor.sv(32) @ 3645: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x2, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 3645: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x2, WINC=0
+# UVM_INFO read_monitor.sv(33) @ 3650: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=1, DATA=0xea
+# UVM_INFO subscriber.sv(48) @ 3650: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xea, RINC=1
+# UVM_INFO scoreboard.sv(98) @ 3650: uvm_test_top.env_o.scb [SCOREBOARD-READ] READ ignored, model empty (size=0), PASS
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 3650: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 3665: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x2, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 3665: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x2, WINC=0
+# UVM_INFO write_monitor.sv(32) @ 3685: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x2, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 3685: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x2, WINC=0
+# UVM_INFO read_monitor.sv(33) @ 3690: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=1, DATA=0xea
+# UVM_INFO subscriber.sv(48) @ 3690: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xea, RINC=1
+# UVM_INFO scoreboard.sv(98) @ 3690: uvm_test_top.env_o.scb [SCOREBOARD-READ] READ ignored, model empty (size=0), PASS
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 3690: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 3705: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x2, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 3705: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x2, WINC=0
+# UVM_INFO write_monitor.sv(32) @ 3725: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x2, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 3725: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x2, WINC=0
+# UVM_INFO read_monitor.sv(33) @ 3730: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=1, DATA=0xea
+# UVM_INFO subscriber.sv(48) @ 3730: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xea, RINC=1
+# UVM_INFO scoreboard.sv(98) @ 3730: uvm_test_top.env_o.scb [SCOREBOARD-READ] READ ignored, model empty (size=0), PASS
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 3730: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0xf3, WINC=0
+# UVM_INFO read_driver.sv(25) @ 3730: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=0
+# UVM_INFO write_monitor.sv(32) @ 3745: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xf3, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 3745: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xf3, WINC=0
+# UVM_INFO write_driver.sv(25) @ 3745: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x43, WINC=1
+# UVM_INFO write_monitor.sv(32) @ 3765: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x43, WINC=1, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 3765: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x43, WINC=1
+# UVM_INFO scoreboard.sv(59) @ 3765: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] WRITE 67 COMPLETED, PASS (size=1)
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 3765: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x8f, WINC=1
+# UVM_INFO read_monitor.sv(33) @ 3770: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=0, REMPTY=1, DATA=0x43
+# UVM_INFO subscriber.sv(48) @ 3770: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0x43, RINC=0
+# UVM_INFO read_driver.sv(25) @ 3770: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 3785: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x8f, WINC=1, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 3785: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x8f, WINC=1
+# UVM_INFO scoreboard.sv(59) @ 3785: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] WRITE 143 COMPLETED, PASS (size=2)
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 3785: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x46, WINC=1
+# UVM_INFO write_monitor.sv(32) @ 3805: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x46, WINC=1, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 3805: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x46, WINC=1
+# UVM_INFO scoreboard.sv(59) @ 3805: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] WRITE 70 COMPLETED, PASS (size=3)
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 3805: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0xb0, WINC=1
+# UVM_INFO read_monitor.sv(33) @ 3810: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=0, DATA=0x43
+# UVM_INFO subscriber.sv(48) @ 3810: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0x43, RINC=1
+# UVM_INFO scoreboard.sv(87) @ 3810: uvm_test_top.env_o.scb [SCOREBOARD-READ] READ DATA MATCH: 67, PASS
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 3810: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 3825: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xb0, WINC=1, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 3825: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xb0, WINC=1
+# UVM_INFO scoreboard.sv(59) @ 3825: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] WRITE 176 COMPLETED, PASS (size=3)
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 3825: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x8, WINC=1
+# UVM_INFO write_monitor.sv(32) @ 3845: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x8, WINC=1, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 3845: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x8, WINC=1
+# UVM_INFO scoreboard.sv(59) @ 3845: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] WRITE 8 COMPLETED, PASS (size=4)
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 3845: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x96, WINC=1
+# UVM_INFO read_monitor.sv(33) @ 3850: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=0, DATA=0x8f
+# UVM_INFO subscriber.sv(48) @ 3850: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0x8f, RINC=1
+# UVM_INFO scoreboard.sv(87) @ 3850: uvm_test_top.env_o.scb [SCOREBOARD-READ] READ DATA MATCH: 143, PASS
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 3850: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 3865: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x96, WINC=1, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 3865: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x96, WINC=1
+# UVM_INFO scoreboard.sv(59) @ 3865: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] WRITE 150 COMPLETED, PASS (size=4)
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 3865: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x51, WINC=1
+# UVM_INFO write_monitor.sv(32) @ 3885: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x51, WINC=1, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 3885: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x51, WINC=1
+# UVM_INFO scoreboard.sv(59) @ 3885: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] WRITE 81 COMPLETED, PASS (size=5)
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 3885: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0xe7, WINC=0
+# UVM_INFO read_monitor.sv(33) @ 3890: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=0, DATA=0x46
+# UVM_INFO subscriber.sv(48) @ 3890: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0x46, RINC=1
+# UVM_INFO scoreboard.sv(87) @ 3890: uvm_test_top.env_o.scb [SCOREBOARD-READ] READ DATA MATCH: 70, PASS
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 3890: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 3905: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xe7, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 3905: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xe7, WINC=0
+# UVM_INFO write_driver.sv(25) @ 3905: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0xa1, WINC=1
+# UVM_INFO write_monitor.sv(32) @ 3925: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xa1, WINC=1, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 3925: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xa1, WINC=1
+# UVM_INFO scoreboard.sv(59) @ 3925: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] WRITE 161 COMPLETED, PASS (size=5)
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 3925: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x95, WINC=1
+# UVM_INFO read_monitor.sv(33) @ 3930: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=0, DATA=0xb0
+# UVM_INFO subscriber.sv(48) @ 3930: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xb0, RINC=1
+# UVM_INFO scoreboard.sv(87) @ 3930: uvm_test_top.env_o.scb [SCOREBOARD-READ] READ DATA MATCH: 176, PASS
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 3930: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=0
+# UVM_INFO write_monitor.sv(32) @ 3945: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x95, WINC=1, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 3945: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x95, WINC=1
+# UVM_INFO scoreboard.sv(59) @ 3945: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] WRITE 149 COMPLETED, PASS (size=5)
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 3945: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x2a, WINC=1
+# UVM_INFO write_monitor.sv(32) @ 3965: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x2a, WINC=1, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 3965: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x2a, WINC=1
+# UVM_INFO scoreboard.sv(59) @ 3965: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] WRITE 42 COMPLETED, PASS (size=6)
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 3965: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x35, WINC=1
+# UVM_INFO read_monitor.sv(33) @ 3970: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=0, REMPTY=0, DATA=0xb0
+# UVM_INFO subscriber.sv(48) @ 3970: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xb0, RINC=0
+# UVM_INFO read_driver.sv(25) @ 3970: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 3985: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x35, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 3985: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x35, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 3985: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 3985: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0xf5, WINC=1
+# UVM_INFO write_monitor.sv(32) @ 4005: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xf5, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 4005: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xf5, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 4005: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 4005: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x40, WINC=1
+# UVM_INFO read_monitor.sv(33) @ 4010: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=0, DATA=0x8
+# UVM_INFO subscriber.sv(48) @ 4010: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0x8, RINC=1
+# UVM_INFO scoreboard.sv(87) @ 4010: uvm_test_top.env_o.scb [SCOREBOARD-READ] READ DATA MATCH: 8, PASS
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 4010: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 4025: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x40, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 4025: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x40, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 4025: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 4025: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x1a, WINC=0
+# UVM_INFO write_monitor.sv(32) @ 4045: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x1a, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 4045: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x1a, WINC=0
+# UVM_INFO write_driver.sv(25) @ 4045: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x8f, WINC=1
+# UVM_INFO read_monitor.sv(33) @ 4050: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=0, DATA=0x96
+# UVM_INFO subscriber.sv(48) @ 4050: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0x96, RINC=1
+# UVM_INFO scoreboard.sv(87) @ 4050: uvm_test_top.env_o.scb [SCOREBOARD-READ] READ DATA MATCH: 150, PASS
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 4050: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=0
+# UVM_INFO write_monitor.sv(32) @ 4065: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x8f, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 4065: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x8f, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 4065: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 4065: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x76, WINC=1
+# UVM_INFO write_monitor.sv(32) @ 4085: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x76, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 4085: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x76, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 4085: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 4085: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0xd, WINC=0
+# UVM_INFO read_monitor.sv(33) @ 4090: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=0, REMPTY=0, DATA=0x96
+# UVM_INFO subscriber.sv(48) @ 4090: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0x96, RINC=0
+# UVM_INFO read_driver.sv(25) @ 4090: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 4105: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xd, WINC=0, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 4105: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xd, WINC=0
+# UVM_INFO write_driver.sv(25) @ 4105: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x60, WINC=0
+# UVM_INFO write_monitor.sv(32) @ 4125: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x60, WINC=0, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 4125: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x60, WINC=0
+# UVM_INFO write_driver.sv(25) @ 4125: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x5c, WINC=1
+# UVM_INFO read_monitor.sv(33) @ 4130: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=0, DATA=0x51
+# UVM_INFO subscriber.sv(48) @ 4130: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0x51, RINC=1
+# UVM_INFO scoreboard.sv(87) @ 4130: uvm_test_top.env_o.scb [SCOREBOARD-READ] READ DATA MATCH: 81, PASS
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 4130: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 4145: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x5c, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 4145: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x5c, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 4145: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 4145: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x5c, WINC=1
+# UVM_INFO write_monitor.sv(32) @ 4165: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x5c, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 4165: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x5c, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 4165: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 4165: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0xa9, WINC=1
+# UVM_INFO read_monitor.sv(33) @ 4170: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=0, DATA=0xa1
+# UVM_INFO subscriber.sv(48) @ 4170: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xa1, RINC=1
+# UVM_INFO scoreboard.sv(87) @ 4170: uvm_test_top.env_o.scb [SCOREBOARD-READ] READ DATA MATCH: 161, PASS
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 4170: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=0
+# UVM_INFO write_monitor.sv(32) @ 4185: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xa9, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 4185: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xa9, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 4185: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 4185: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x44, WINC=1
+# UVM_INFO write_monitor.sv(32) @ 4205: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x44, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 4205: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x44, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 4205: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 4205: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0xa3, WINC=1
+# UVM_INFO read_monitor.sv(33) @ 4210: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=0, REMPTY=0, DATA=0xa1
+# UVM_INFO subscriber.sv(48) @ 4210: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0xa1, RINC=0
+# UVM_INFO read_driver.sv(25) @ 4210: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 4225: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xa3, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 4225: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xa3, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 4225: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 4225: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x38, WINC=1
+# UVM_INFO write_monitor.sv(32) @ 4245: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x38, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 4245: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x38, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 4245: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 4245: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x92, WINC=0
+# UVM_INFO read_monitor.sv(33) @ 4250: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=0, DATA=0x95
+# UVM_INFO subscriber.sv(48) @ 4250: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0x95, RINC=1
+# UVM_INFO scoreboard.sv(87) @ 4250: uvm_test_top.env_o.scb [SCOREBOARD-READ] READ DATA MATCH: 149, PASS
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 4250: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=0
+# UVM_INFO write_monitor.sv(32) @ 4265: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x92, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 4265: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x92, WINC=0
+# UVM_INFO write_driver.sv(25) @ 4265: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x98, WINC=0
+# UVM_INFO write_monitor.sv(32) @ 4285: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x98, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 4285: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x98, WINC=0
+# UVM_INFO write_driver.sv(25) @ 4285: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0xd8, WINC=1
+# UVM_INFO read_monitor.sv(33) @ 4290: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=0, REMPTY=0, DATA=0x95
+# UVM_INFO subscriber.sv(48) @ 4290: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0x95, RINC=0
+# UVM_INFO read_driver.sv(25) @ 4290: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=0
+# UVM_INFO write_monitor.sv(32) @ 4305: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0xd8, WINC=1, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 4305: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0xd8, WINC=1
+# UVM_ERROR scoreboard.sv(74) @ 4305: uvm_test_top.env_o.scb [SCOREBOARD-WRITE] DUT asserted wfull too early, FAIL
+# ----------------------------------------------------------------------------------
+# UVM_INFO write_driver.sv(25) @ 4305: uvm_test_top.env_o.wrt_agt.drv [WRITE_DRIVER] Driving: DATA=0x8d, WINC=0
+# UVM_INFO write_monitor.sv(32) @ 4325: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x8d, WINC=0, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 4325: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x8d, WINC=0
+# UVM_INFO read_monitor.sv(33) @ 4330: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=0, REMPTY=0, DATA=0x95
+# UVM_INFO subscriber.sv(48) @ 4330: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0x95, RINC=0
+# UVM_INFO read_driver.sv(25) @ 4330: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=0
+# UVM_INFO write_monitor.sv(32) @ 4345: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x8d, WINC=0, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 4345: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x8d, WINC=0
+# UVM_INFO write_monitor.sv(32) @ 4365: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x8d, WINC=0, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 4365: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x8d, WINC=0
+# UVM_INFO read_monitor.sv(33) @ 4370: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=0, REMPTY=0, DATA=0x95
+# UVM_INFO subscriber.sv(48) @ 4370: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0x95, RINC=0
+# UVM_INFO read_driver.sv(25) @ 4370: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 4385: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x8d, WINC=0, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 4385: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x8d, WINC=0
+# UVM_INFO write_monitor.sv(32) @ 4405: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x8d, WINC=0, WFULL=1
+# UVM_INFO subscriber.sv(39) @ 4405: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x8d, WINC=0
+# UVM_INFO read_monitor.sv(33) @ 4410: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=0, DATA=0x2a
+# UVM_INFO subscriber.sv(48) @ 4410: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0x2a, RINC=1
+# UVM_INFO scoreboard.sv(87) @ 4410: uvm_test_top.env_o.scb [SCOREBOARD-READ] READ DATA MATCH: 42, PASS
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 4410: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=0
+# UVM_INFO write_monitor.sv(32) @ 4425: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x8d, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 4425: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x8d, WINC=0
+# UVM_INFO write_monitor.sv(32) @ 4445: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x8d, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 4445: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x8d, WINC=0
+# UVM_INFO read_monitor.sv(33) @ 4450: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=0, REMPTY=0, DATA=0x2a
+# UVM_INFO subscriber.sv(48) @ 4450: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0x2a, RINC=0
+# UVM_INFO read_driver.sv(25) @ 4450: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=0
+# UVM_INFO write_monitor.sv(32) @ 4465: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x8d, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 4465: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x8d, WINC=0
+# UVM_INFO write_monitor.sv(32) @ 4485: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x8d, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 4485: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x8d, WINC=0
+# UVM_INFO read_monitor.sv(33) @ 4490: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=0, REMPTY=0, DATA=0x2a
+# UVM_INFO subscriber.sv(48) @ 4490: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0x2a, RINC=0
+# UVM_INFO read_driver.sv(25) @ 4490: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 4505: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x8d, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 4505: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x8d, WINC=0
+# UVM_INFO write_monitor.sv(32) @ 4525: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x8d, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 4525: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x8d, WINC=0
+# UVM_INFO read_monitor.sv(33) @ 4530: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=0, DATA=0x35
+# UVM_INFO subscriber.sv(48) @ 4530: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0x35, RINC=1
+# UVM_ERROR scoreboard.sv(103) @ 4530: uvm_test_top.env_o.scb [SCOREBOARD-READ] DUT failed to assert rempty when empty
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 4530: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=0
+# UVM_INFO write_monitor.sv(32) @ 4545: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x8d, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 4545: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x8d, WINC=0
+# UVM_INFO write_monitor.sv(32) @ 4565: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x8d, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 4565: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x8d, WINC=0
+# UVM_INFO read_monitor.sv(33) @ 4570: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=0, REMPTY=0, DATA=0x35
+# UVM_INFO subscriber.sv(48) @ 4570: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0x35, RINC=0
+# UVM_INFO read_driver.sv(25) @ 4570: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 4585: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x8d, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 4585: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x8d, WINC=0
+# UVM_INFO write_monitor.sv(32) @ 4605: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x8d, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 4605: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x8d, WINC=0
+# UVM_INFO read_monitor.sv(33) @ 4610: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=0, DATA=0x40
+# UVM_INFO subscriber.sv(48) @ 4610: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0x40, RINC=1
+# UVM_ERROR scoreboard.sv(103) @ 4610: uvm_test_top.env_o.scb [SCOREBOARD-READ] DUT failed to assert rempty when empty
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 4610: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 4625: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x8d, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 4625: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x8d, WINC=0
+# UVM_INFO write_monitor.sv(32) @ 4645: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x8d, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 4645: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x8d, WINC=0
+# UVM_INFO read_monitor.sv(33) @ 4650: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=0, DATA=0x8f
+# UVM_INFO subscriber.sv(48) @ 4650: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0x8f, RINC=1
+# UVM_ERROR scoreboard.sv(103) @ 4650: uvm_test_top.env_o.scb [SCOREBOARD-READ] DUT failed to assert rempty when empty
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 4650: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=0
+# UVM_INFO write_monitor.sv(32) @ 4665: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x8d, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 4665: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x8d, WINC=0
+# UVM_INFO write_monitor.sv(32) @ 4685: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x8d, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 4685: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x8d, WINC=0
+# UVM_INFO read_monitor.sv(33) @ 4690: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=0, REMPTY=0, DATA=0x8f
+# UVM_INFO subscriber.sv(48) @ 4690: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0x8f, RINC=0
+# UVM_INFO read_driver.sv(25) @ 4690: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=0
+# UVM_INFO write_monitor.sv(32) @ 4705: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x8d, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 4705: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x8d, WINC=0
+# UVM_INFO write_monitor.sv(32) @ 4725: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x8d, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 4725: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x8d, WINC=0
+# UVM_INFO read_monitor.sv(33) @ 4730: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=0, REMPTY=0, DATA=0x8f
+# UVM_INFO subscriber.sv(48) @ 4730: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0x8f, RINC=0
+# UVM_INFO read_driver.sv(25) @ 4730: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=0
+# UVM_INFO write_monitor.sv(32) @ 4745: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x8d, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 4745: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x8d, WINC=0
+# UVM_INFO write_monitor.sv(32) @ 4765: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x8d, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 4765: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x8d, WINC=0
+# UVM_INFO read_monitor.sv(33) @ 4770: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=0, REMPTY=0, DATA=0x8f
+# UVM_INFO subscriber.sv(48) @ 4770: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0x8f, RINC=0
+# UVM_INFO read_driver.sv(25) @ 4770: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=0
+# UVM_INFO write_monitor.sv(32) @ 4785: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x8d, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 4785: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x8d, WINC=0
+# UVM_INFO write_monitor.sv(32) @ 4805: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x8d, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 4805: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x8d, WINC=0
+# UVM_INFO read_monitor.sv(33) @ 4810: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=0, REMPTY=0, DATA=0x8f
+# UVM_INFO subscriber.sv(48) @ 4810: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0x8f, RINC=0
+# UVM_INFO read_driver.sv(25) @ 4810: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=1
+# UVM_INFO write_monitor.sv(32) @ 4825: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x8d, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 4825: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x8d, WINC=0
+# UVM_INFO write_monitor.sv(32) @ 4845: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x8d, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 4845: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x8d, WINC=0
+# UVM_INFO read_monitor.sv(33) @ 4850: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=1, REMPTY=0, DATA=0x5c
+# UVM_INFO subscriber.sv(48) @ 4850: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0x5c, RINC=1
+# UVM_ERROR scoreboard.sv(103) @ 4850: uvm_test_top.env_o.scb [SCOREBOARD-READ] DUT failed to assert rempty when empty
+# ----------------------------------------------------------------------------------
+# UVM_INFO read_driver.sv(25) @ 4850: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=0
+# UVM_INFO write_monitor.sv(32) @ 4865: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x8d, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 4865: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x8d, WINC=0
+# UVM_INFO write_monitor.sv(32) @ 4885: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x8d, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 4885: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x8d, WINC=0
+# UVM_INFO read_monitor.sv(33) @ 4890: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=0, REMPTY=0, DATA=0x5c
+# UVM_INFO subscriber.sv(48) @ 4890: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0x5c, RINC=0
+# UVM_INFO read_driver.sv(25) @ 4890: uvm_test_top.env_o.rd_agt.drv [READ_DRIVER] Reading: RINC=0
+# UVM_INFO write_monitor.sv(32) @ 4905: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x8d, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 4905: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x8d, WINC=0
+# UVM_INFO write_monitor.sv(32) @ 4925: uvm_test_top.env_o.wrt_agt.mon [WRITE_MONITOR] Observed Write: DATA=0x8d, WINC=0, WFULL=0
+# UVM_INFO subscriber.sv(39) @ 4925: uvm_test_top.env_o.sub [subscriber] Input Coverage: WDATA=0x8d, WINC=0
+# UVM_INFO read_monitor.sv(33) @ 4930: uvm_test_top.env_o.rd_agt.mon [READ_MONITOR] Observed Read: RINC=0, REMPTY=0, DATA=0x5c
+# UVM_INFO subscriber.sv(48) @ 4930: uvm_test_top.env_o.sub [subscriber] Output Coverage: RDATA=0x5c, RINC=0
+# UVM_INFO /tools/mentor/questasim_10.6c/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1268) @ 4930: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# UVM_INFO scoreboard.sv(120) @ 4930: uvm_test_top.env_o.scb [SCOREBOARD-SUMMARY] FINAL RESULT: READ PASS=43 | READ FAIL=31 | WRITE PASS=21 | WRITE FAIL=127
+# UVM_INFO subscriber.sv(55) @ 4930: uvm_test_top.env_o.sub [subscriber] Write Coverage = 69.34%
+# UVM_INFO subscriber.sv(58) @ 4930: uvm_test_top.env_o.sub [subscriber] Read Coverage  = 56.25%
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO : 1103
+# UVM_WARNING :    0
+# UVM_ERROR :  158
+# UVM_FATAL :    0
+# ** Report counts by id
+# [READ_DRIVER]   120
+# [READ_MONITOR]   122
+# [READ_SEQ]    30
+# [RNTST]     1
+# [SCOREBOARD-READ]    74
+# [SCOREBOARD-SUMMARY]     1
+# [SCOREBOARD-WRITE]   148
+# [TEST_DONE]     1
+# [WRITE_DRIVER]   120
+# [WRITE_MONITOR]   245
+# [WRITE_SEQ]    30
+# [subscriber]   369
+# ** Note: $finish    : /tools/mentor/questasim_10.6c/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 4930 ns  Iteration: 67  Instance: /top
+# Saving coverage database on exit...
+# End time: 15:54:19 on Oct 07,2025, Elapsed time: 0:00:04
+# Errors: 0, Warnings: 1

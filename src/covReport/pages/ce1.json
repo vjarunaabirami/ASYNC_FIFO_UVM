@@ -1,0 +1,28 @@
+var g_data = {
+c10:[{dummy:0}
+,{anchor:'cvg154',cr:'m',items:[{s:'3',x:'FC',z:'(wclk_en && ~wfull)',c:'R',p:'0.00',d:'0',F:'1'}
+,{}
+,{z:'wclk_en',c:'r',r:'No hits',i:'Hit \'_0\' and \'_1\''}
+,{z:'wfull',c:'r',r:'No hits',i:'Hit \'_0\' and \'_1\''}
+,{}
+,{n:'1',z:'wclk_en_0',h1:'0',t:'c',c1:'-'}
+,{n:'2',z:'wclk_en_1',h1:'0',t:'c',c1:'~wfull'}
+,{n:'3',z:'wfull_0',h1:'0',t:'c',c1:'wclk_en'}
+,{n:'4',z:'wfull_1',h1:'0',t:'c',c1:'wclk_en'}
+]}
+],
+c151:[{dummy:0}
+,{anchor:'cvg154',cr:'m',items:[{s:'3',x:'FC',z:'(wclk_en && ~wfull)',c:'R',p:'0.00',d:'0',F:'1'}
+,{}
+,{z:'wclk_en',c:'r',r:'No hits',i:'Hit \'_0\' and \'_1\''}
+,{z:'wfull',c:'r',r:'No hits',i:'Hit \'_0\' and \'_1\''}
+,{}
+,{n:'1',z:'wclk_en_0',h1:'0',t:'c',c1:'-'}
+,{n:'2',z:'wclk_en_1',h1:'0',t:'c',c1:'~wfull'}
+,{n:'3',z:'wfull_0',h1:'0',t:'c',c1:'wclk_en'}
+,{n:'4',z:'wfull_1',h1:'0',t:'c',c1:'wclk_en'}
+]}
+],
+dummyEnd:0
+};
+processCondExprData(g_data);
