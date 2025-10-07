@@ -1,0 +1,22 @@
+QuestaSim vlog 10.6c Compiler 2017.07 Jul 25 2017
+Start time: 22:15:37 on Oct 07,2025
+vlog -sv "+acc" "+cover" "+fcover" -l top.log top.sv 
+** Error: top.sv(2): Cannot open `include file "/tools/mentor/questasim_10.6c/questasim/ovm-2.1.2/../verilog_src/ovm-2.1.2/src/uvm_pkg.sv".
+** Error: top.sv(3): Cannot open `include file "/tools/mentor/questasim_10.6c/questasim/ovm-2.1.2/../verilog_src/ovm-2.1.2/src/uvm_macros.svh".
+-- Compiling package async_fifo_pkg
+** Error: ** while parsing file included at top.sv(4)
+** at async_fifo_pkg.sv(4): Cannot open `include file "/tools/mentor/questasim_10.6c/questasim/ovm-2.1.2/../verilog_src/ovm-2.1.2/src/uvm_pkg.sv".
+** Error: ** while parsing file included at top.sv(4)
+** at async_fifo_pkg.sv(5): Cannot open `include file "/tools/mentor/questasim_10.6c/questasim/ovm-2.1.2/../verilog_src/ovm-2.1.2/src/uvm_macros.svh".
+** Error: ** while parsing file included at top.sv(4)
+** while parsing file included at async_fifo_pkg.sv(8)
+** at async_fifo_write_sequence_item.sv(1): Cannot open `include file "/tools/mentor/questasim_10.6c/questasim/ovm-2.1.2/../verilog_src/ovm-2.1.2/src/uvm_macros.svh".
+-- Importing package uvm_pkg (uvm-1.1d Built-in)
+** Error: ** while parsing file included at top.sv(4)
+** while parsing file included at async_fifo_pkg.sv(8)
+** at async_fifo_write_sequence_item.sv(15): (vlog-2163) Macro `uvm_object_utils_begin is undefined.
+** Error: (vlog-13069) ** while parsing file included at top.sv(4)
+** while parsing file included at async_fifo_pkg.sv(8)
+** at async_fifo_write_sequence_item.sv(15): near "(": syntax error, unexpected '(', expecting function or task or "SystemVerilog keyword 'pure'".
+End time: 22:15:37 on Oct 07,2025, Elapsed time: 0:00:00
+Errors: 7, Warnings: 0

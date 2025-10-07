@@ -12,14 +12,20 @@ class subscriber extends uvm_component;
 
   covergroup write_cov;
     option.per_instance = 1;
-    WDATA_CVG : coverpoint write_trans.wdata { bins wdata_bins[] = {[0:255]}; }
     WINC_CVG  : coverpoint write_trans.winc  { bins winc_bins[]  = {0,1}; }
+    WDATA_CVG : coverpoint write_trans.wdata  { 
+      bins wdata1 = {[0:129]};
+      bins wdata2 = {[130:255]};
+    }
+    WFULL_CVG : coverpoint write_trans.wfull { bins wfull = {0,1}; }
   endgroup
 
   covergroup read_cov;
     option.per_instance = 1;
-    RDATA_CVG : coverpoint read_trans.rdata { bins rdata_bins[] = {[0:255]}; }
+    RDATA_CVG : coverpoint read_trans.rdata { bins rdata1  = {[0:129]};
+						bins rdata2 = {[130:255]}; }
     RINC_CVG  : coverpoint read_trans.rinc  { bins rinc_bins[]  = {0,1}; }
+    REMPTY_CVG : coverpoint read_trans.rempty { bins rempty_bin = {0,1}; }
   endgroup
 
   function new(string name="subscriber", uvm_component parent=null);
@@ -35,8 +41,7 @@ class subscriber extends uvm_component;
     write_cov.sample();
     `uvm_info(get_type_name(),
               $sformatf("Input Coverage: WDATA=0x%0h, WINC=%0b",
-                        write_trans.wdata, write_trans.winc),
-              UVM_LOW);
+                        write_trans.wdata, write_trans.winc),    UVM_LOW);
   endfunction
 
   function void write_read_mon_sub(async_fifo_read_sequence_item t);

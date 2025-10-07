@@ -1,26 +1,174 @@
 var g_data = {
-c10:[{dummy:0}
-,{anchor:'cvg154',cr:'m',items:[{s:'3',x:'FC',z:'(wclk_en && ~wfull)',c:'R',p:'0.00',d:'0',F:'1'}
+c8:[{dummy:0}
+,{anchor:'cvg151',cr:'c',items:[{s:'3',x:'FC',z:'(wclk_en && ~wfull)',c:'G',p:'100.00',d:'0',F:'1'}
 ,{}
-,{z:'wclk_en',c:'r',r:'No hits',i:'Hit \'_0\' and \'_1\''}
-,{z:'wfull',c:'r',r:'No hits',i:'Hit \'_0\' and \'_1\''}
+,{z:'wclk_en',c:'g',r:'',i:''}
+,{z:'wfull',c:'g',r:'',i:''}
 ,{}
-,{n:'1',z:'wclk_en_0',h1:'0',t:'c',c1:'-'}
-,{n:'2',z:'wclk_en_1',h1:'0',t:'c',c1:'~wfull'}
-,{n:'3',z:'wfull_0',h1:'0',t:'c',c1:'wclk_en'}
-,{n:'4',z:'wfull_1',h1:'0',t:'c',c1:'wclk_en'}
+,{n:'1',z:'wclk_en_0',h1:'1',t:'c',c1:'-'}
+,{n:'2',z:'wclk_en_1',h1:'1',t:'c',c1:'~wfull'}
+,{n:'3',z:'wfull_0',h1:'1',t:'c',c1:'wclk_en'}
+,{n:'4',z:'wfull_1',h1:'1',t:'c',c1:'wclk_en'}
 ]}
 ],
-c151:[{dummy:0}
-,{anchor:'cvg154',cr:'m',items:[{s:'3',x:'FC',z:'(wclk_en && ~wfull)',c:'R',p:'0.00',d:'0',F:'1'}
+c148:[{dummy:0}
+,{anchor:'cvg151',cr:'c',items:[{s:'3',x:'FC',z:'(wclk_en && ~wfull)',c:'G',p:'100.00',d:'0',F:'1'}
 ,{}
-,{z:'wclk_en',c:'r',r:'No hits',i:'Hit \'_0\' and \'_1\''}
-,{z:'wfull',c:'r',r:'No hits',i:'Hit \'_0\' and \'_1\''}
+,{z:'wclk_en',c:'g',r:'',i:''}
+,{z:'wfull',c:'g',r:'',i:''}
 ,{}
-,{n:'1',z:'wclk_en_0',h1:'0',t:'c',c1:'-'}
-,{n:'2',z:'wclk_en_1',h1:'0',t:'c',c1:'~wfull'}
-,{n:'3',z:'wfull_0',h1:'0',t:'c',c1:'wclk_en'}
-,{n:'4',z:'wfull_1',h1:'0',t:'c',c1:'wclk_en'}
+,{n:'1',z:'wclk_en_0',h1:'1',t:'c',c1:'-'}
+,{n:'2',z:'wclk_en_1',h1:'1',t:'c',c1:'~wfull'}
+,{n:'3',z:'wfull_0',h1:'1',t:'c',c1:'wclk_en'}
+,{n:'4',z:'wfull_1',h1:'1',t:'c',c1:'wclk_en'}
+]}
+],
+c1316:[{dummy:0}
+,{anchor:'cvg1324',items:[{s:'3',x:'FC',z:'((size(this.fifo_mem) < this.depth) && (tr.wfull == 0))',c:'Y',p:'50.00',d:'0',F:'1'}
+,{}
+,{z:'(size(this.fifo_mem) < this.depth)',c:'r',r:'\'_0\' not hit',i:'Hit \'_0\''}
+,{z:'(tr.wfull == 0)',c:'g',r:'',i:''}
+,{}
+,{n:'1',z:'(size(this.fifo_mem) < this.depth)_0',h1:'0',t:'c',c1:'-'}
+,{n:'2',z:'(size(this.fifo_mem) < this.depth)_1',h1:'1',t:'c',c1:'(tr.wfull == 0)'}
+,{n:'3',z:'(tr.wfull == 0)_0',h1:'1',t:'c',c1:'(size(this.fifo_mem) < this.depth)'}
+,{n:'4',z:'(tr.wfull == 0)_1',h1:'1',t:'c',c1:'(size(this.fifo_mem) < this.depth)'}
+]}
+,{anchor:'cvg1326',cr:'m',items:[{s:'3',x:'FC',z:'((size(this.fifo_mem) == this.depth) && (tr.wfull == 1))',c:'R',p:'0.00',d:'0',F:'1'}
+,{}
+,{z:'(size(this.fifo_mem) == this.depth)',c:'r',r:'\'_1\' not hit',i:'Hit \'_1\''}
+,{z:'(tr.wfull == 1)',c:'r',r:'No hits',i:'Hit \'_0\' and \'_1\''}
+,{}
+,{n:'1',z:'(size(this.fifo_mem) == this.depth)_0',h1:'1',t:'c',c1:'-'}
+,{n:'2',z:'(size(this.fifo_mem) == this.depth)_1',h1:'0',t:'c',c1:'(tr.wfull == 1)'}
+,{n:'3',z:'(tr.wfull == 1)_0',h1:'0',t:'c',c1:'(size(this.fifo_mem) == this.depth)'}
+,{n:'4',z:'(tr.wfull == 1)_1',h1:'0',t:'c',c1:'(size(this.fifo_mem) == this.depth)'}
+]}
+,{anchor:'cvg1328',cr:'m',items:[{s:'3',x:'FC',z:'((size(this.fifo_mem) >= this.depth) && (tr.wfull == 0))',c:'R',p:'0.00',d:'0',F:'1'}
+,{}
+,{z:'(size(this.fifo_mem) >= this.depth)',c:'r',r:'\'_1\' not hit',i:'Hit \'_1\''}
+,{z:'(tr.wfull == 0)',c:'r',r:'No hits',i:'Hit \'_0\' and \'_1\''}
+,{}
+,{n:'1',z:'(size(this.fifo_mem) >= this.depth)_0',h1:'1',t:'c',c1:'-'}
+,{n:'2',z:'(size(this.fifo_mem) >= this.depth)_1',h1:'0',t:'c',c1:'(tr.wfull == 0)'}
+,{n:'3',z:'(tr.wfull == 0)_0',h1:'0',t:'c',c1:'(size(this.fifo_mem) >= this.depth)'}
+,{n:'4',z:'(tr.wfull == 0)_1',h1:'0',t:'c',c1:'(size(this.fifo_mem) >= this.depth)'}
+]}
+],
+c1329:[{dummy:0}
+,{anchor:'cvg1339',items:[{s:'3',x:'FC',z:'((size(this.fifo_mem) > 0) && (tr.rempty == 0))',c:'Y',p:'50.00',d:'0',F:'1'}
+,{}
+,{z:'(size(this.fifo_mem) > 0)',c:'g',r:'',i:''}
+,{z:'(tr.rempty == 0)',c:'r',r:'\'_0\' not hit',i:'Hit \'_0\''}
+,{}
+,{n:'1',z:'(size(this.fifo_mem) > 0)_0',h1:'1',t:'c',c1:'-'}
+,{n:'2',z:'(size(this.fifo_mem) > 0)_1',h1:'1',t:'c',c1:'(tr.rempty == 0)'}
+,{n:'3',z:'(tr.rempty == 0)_0',h1:'0',t:'c',c1:'(size(this.fifo_mem) > 0)'}
+,{n:'4',z:'(tr.rempty == 0)_1',h1:'1',t:'c',c1:'(size(this.fifo_mem) > 0)'}
+]}
+,{anchor:'cvg1341',items:[{s:'3',x:'FC',z:'((size(this.fifo_mem) == 0) && (tr.rempty == 1))',c:'Y',p:'50.00',d:'0',F:'1'}
+,{}
+,{z:'(size(this.fifo_mem) == 0)',c:'r',r:'\'_0\' not hit',i:'Hit \'_0\''}
+,{z:'(tr.rempty == 1)',c:'g',r:'',i:''}
+,{}
+,{n:'1',z:'(size(this.fifo_mem) == 0)_0',h1:'0',t:'c',c1:'-'}
+,{n:'2',z:'(size(this.fifo_mem) == 0)_1',h1:'1',t:'c',c1:'(tr.rempty == 1)'}
+,{n:'3',z:'(tr.rempty == 1)_0',h1:'1',t:'c',c1:'(size(this.fifo_mem) == 0)'}
+,{n:'4',z:'(tr.rempty == 1)_1',h1:'1',t:'c',c1:'(size(this.fifo_mem) == 0)'}
+]}
+,{anchor:'cvg1343',cr:'m',items:[{s:'3',x:'FC',z:'((size(this.fifo_mem) == 0) && (tr.rempty == 0))',c:'R',p:'0.00',d:'0',F:'1'}
+,{}
+,{z:'(size(this.fifo_mem) == 0)',c:'r',r:'\'_0\' not hit',i:'Hit \'_0\''}
+,{z:'(tr.rempty == 0)',c:'r',r:'\'_0\' not hit',i:'Hit \'_0\''}
+,{}
+,{n:'1',z:'(size(this.fifo_mem) == 0)_0',h1:'0',t:'c',c1:'-'}
+,{n:'2',z:'(size(this.fifo_mem) == 0)_1',h1:'1',t:'c',c1:'(tr.rempty == 0)'}
+,{n:'3',z:'(tr.rempty == 0)_0',h1:'0',t:'c',c1:'(size(this.fifo_mem) == 0)'}
+,{n:'4',z:'(tr.rempty == 0)_1',h1:'1',t:'c',c1:'(size(this.fifo_mem) == 0)'}
+]}
+,{anchor:'cvg1345',cr:'m',items:[{s:'3',x:'FC',z:'((size(this.fifo_mem) != 0) && (tr.rempty == 1))',c:'R',p:'0.00',d:'0',F:'1'}
+,{}
+,{z:'(size(this.fifo_mem) != 0)',c:'r',r:'No hits',i:'Hit \'_0\' and \'_1\''}
+,{z:'(tr.rempty == 1)',c:'r',r:'No hits',i:'Hit \'_0\' and \'_1\''}
+,{}
+,{n:'1',z:'(size(this.fifo_mem) != 0)_0',h1:'0',t:'c',c1:'-'}
+,{n:'2',z:'(size(this.fifo_mem) != 0)_1',h1:'0',t:'c',c1:'(tr.rempty == 1)'}
+,{n:'3',z:'(tr.rempty == 1)_0',h1:'0',t:'c',c1:'(size(this.fifo_mem) != 0)'}
+,{n:'4',z:'(tr.rempty == 1)_1',h1:'0',t:'c',c1:'(size(this.fifo_mem) != 0)'}
+]}
+],
+c1727:[{dummy:0}
+,{anchor:'cvg1735',items:[{s:'3',x:'FC',z:'((size(this.fifo_mem) < this.depth) && (tr.wfull == 0))',c:'Y',p:'50.00',d:'0',F:'1'}
+,{}
+,{z:'(size(this.fifo_mem) < this.depth)',c:'r',r:'\'_0\' not hit',i:'Hit \'_0\''}
+,{z:'(tr.wfull == 0)',c:'g',r:'',i:''}
+,{}
+,{n:'1',z:'(size(this.fifo_mem) < this.depth)_0',h1:'0',t:'c',c1:'-'}
+,{n:'2',z:'(size(this.fifo_mem) < this.depth)_1',h1:'1',t:'c',c1:'(tr.wfull == 0)'}
+,{n:'3',z:'(tr.wfull == 0)_0',h1:'1',t:'c',c1:'(size(this.fifo_mem) < this.depth)'}
+,{n:'4',z:'(tr.wfull == 0)_1',h1:'1',t:'c',c1:'(size(this.fifo_mem) < this.depth)'}
+]}
+,{anchor:'cvg1737',cr:'m',items:[{s:'3',x:'FC',z:'((size(this.fifo_mem) == this.depth) && (tr.wfull == 1))',c:'R',p:'0.00',d:'0',F:'1'}
+,{}
+,{z:'(size(this.fifo_mem) == this.depth)',c:'r',r:'\'_1\' not hit',i:'Hit \'_1\''}
+,{z:'(tr.wfull == 1)',c:'r',r:'No hits',i:'Hit \'_0\' and \'_1\''}
+,{}
+,{n:'1',z:'(size(this.fifo_mem) == this.depth)_0',h1:'1',t:'c',c1:'-'}
+,{n:'2',z:'(size(this.fifo_mem) == this.depth)_1',h1:'0',t:'c',c1:'(tr.wfull == 1)'}
+,{n:'3',z:'(tr.wfull == 1)_0',h1:'0',t:'c',c1:'(size(this.fifo_mem) == this.depth)'}
+,{n:'4',z:'(tr.wfull == 1)_1',h1:'0',t:'c',c1:'(size(this.fifo_mem) == this.depth)'}
+]}
+,{anchor:'cvg1739',cr:'m',items:[{s:'3',x:'FC',z:'((size(this.fifo_mem) >= this.depth) && (tr.wfull == 0))',c:'R',p:'0.00',d:'0',F:'1'}
+,{}
+,{z:'(size(this.fifo_mem) >= this.depth)',c:'r',r:'\'_1\' not hit',i:'Hit \'_1\''}
+,{z:'(tr.wfull == 0)',c:'r',r:'No hits',i:'Hit \'_0\' and \'_1\''}
+,{}
+,{n:'1',z:'(size(this.fifo_mem) >= this.depth)_0',h1:'1',t:'c',c1:'-'}
+,{n:'2',z:'(size(this.fifo_mem) >= this.depth)_1',h1:'0',t:'c',c1:'(tr.wfull == 0)'}
+,{n:'3',z:'(tr.wfull == 0)_0',h1:'0',t:'c',c1:'(size(this.fifo_mem) >= this.depth)'}
+,{n:'4',z:'(tr.wfull == 0)_1',h1:'0',t:'c',c1:'(size(this.fifo_mem) >= this.depth)'}
+]}
+],
+c1740:[{dummy:0}
+,{anchor:'cvg1750',items:[{s:'3',x:'FC',z:'((size(this.fifo_mem) > 0) && (tr.rempty == 0))',c:'Y',p:'50.00',d:'0',F:'1'}
+,{}
+,{z:'(size(this.fifo_mem) > 0)',c:'g',r:'',i:''}
+,{z:'(tr.rempty == 0)',c:'r',r:'\'_0\' not hit',i:'Hit \'_0\''}
+,{}
+,{n:'1',z:'(size(this.fifo_mem) > 0)_0',h1:'1',t:'c',c1:'-'}
+,{n:'2',z:'(size(this.fifo_mem) > 0)_1',h1:'1',t:'c',c1:'(tr.rempty == 0)'}
+,{n:'3',z:'(tr.rempty == 0)_0',h1:'0',t:'c',c1:'(size(this.fifo_mem) > 0)'}
+,{n:'4',z:'(tr.rempty == 0)_1',h1:'1',t:'c',c1:'(size(this.fifo_mem) > 0)'}
+]}
+,{anchor:'cvg1752',items:[{s:'3',x:'FC',z:'((size(this.fifo_mem) == 0) && (tr.rempty == 1))',c:'Y',p:'50.00',d:'0',F:'1'}
+,{}
+,{z:'(size(this.fifo_mem) == 0)',c:'r',r:'\'_0\' not hit',i:'Hit \'_0\''}
+,{z:'(tr.rempty == 1)',c:'g',r:'',i:''}
+,{}
+,{n:'1',z:'(size(this.fifo_mem) == 0)_0',h1:'0',t:'c',c1:'-'}
+,{n:'2',z:'(size(this.fifo_mem) == 0)_1',h1:'1',t:'c',c1:'(tr.rempty == 1)'}
+,{n:'3',z:'(tr.rempty == 1)_0',h1:'1',t:'c',c1:'(size(this.fifo_mem) == 0)'}
+,{n:'4',z:'(tr.rempty == 1)_1',h1:'1',t:'c',c1:'(size(this.fifo_mem) == 0)'}
+]}
+,{anchor:'cvg1754',cr:'m',items:[{s:'3',x:'FC',z:'((size(this.fifo_mem) == 0) && (tr.rempty == 0))',c:'R',p:'0.00',d:'0',F:'1'}
+,{}
+,{z:'(size(this.fifo_mem) == 0)',c:'r',r:'\'_0\' not hit',i:'Hit \'_0\''}
+,{z:'(tr.rempty == 0)',c:'r',r:'\'_0\' not hit',i:'Hit \'_0\''}
+,{}
+,{n:'1',z:'(size(this.fifo_mem) == 0)_0',h1:'0',t:'c',c1:'-'}
+,{n:'2',z:'(size(this.fifo_mem) == 0)_1',h1:'1',t:'c',c1:'(tr.rempty == 0)'}
+,{n:'3',z:'(tr.rempty == 0)_0',h1:'0',t:'c',c1:'(size(this.fifo_mem) == 0)'}
+,{n:'4',z:'(tr.rempty == 0)_1',h1:'1',t:'c',c1:'(size(this.fifo_mem) == 0)'}
+]}
+,{anchor:'cvg1756',cr:'m',items:[{s:'3',x:'FC',z:'((size(this.fifo_mem) != 0) && (tr.rempty == 1))',c:'R',p:'0.00',d:'0',F:'1'}
+,{}
+,{z:'(size(this.fifo_mem) != 0)',c:'r',r:'No hits',i:'Hit \'_0\' and \'_1\''}
+,{z:'(tr.rempty == 1)',c:'r',r:'No hits',i:'Hit \'_0\' and \'_1\''}
+,{}
+,{n:'1',z:'(size(this.fifo_mem) != 0)_0',h1:'0',t:'c',c1:'-'}
+,{n:'2',z:'(size(this.fifo_mem) != 0)_1',h1:'0',t:'c',c1:'(tr.rempty == 1)'}
+,{n:'3',z:'(tr.rempty == 1)_0',h1:'0',t:'c',c1:'(size(this.fifo_mem) != 0)'}
+,{n:'4',z:'(tr.rempty == 1)_1',h1:'0',t:'c',c1:'(size(this.fifo_mem) != 0)'}
 ]}
 ],
 dummyEnd:0
