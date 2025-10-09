@@ -725,72 +725,72 @@ b1306:[{dummy:0},
 ,{cr:'m',t:'A',z:'              UVM_LOW);',f:'subscriber.sv',l:'63',h:'0',c:'r'}
 ]}],
 b1316:[{dummy:0},
-{anchor:'cvg1317',items:[{z:'    if (tr.winc) begin',f:'scoreboard.sv',l:'55',c:'G',p:'100.00'}
-,{cr:'c',t:'I',z:'    if (tr.winc) begin',f:'scoreboard.sv',l:'55',h:'148',c:'g'}
-,{cr:'c',t:'A',z:'    if (tr.winc) begin',f:'scoreboard.sv',l:'55',h:'97',c:'g'}
+{anchor:'cvg1317',items:[{z:'      if (fifo_mem.size() < depth && tr.wfull == 0) begin',f:'scoreboard.sv',l:'55',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'      if (fifo_mem.size() < depth && tr.wfull == 0) begin',f:'scoreboard.sv',l:'55',h:'148',c:'g'}
+,{cr:'c',t:'A',z:'      if (fifo_mem.size() < depth && tr.wfull == 0) begin',f:'scoreboard.sv',l:'55',h:'97',c:'g'}
 ]},
-{anchor:'cvg1318',items:[{z:'      if (fifo_mem.size() < depth && tr.wfull == 0) begin',f:'scoreboard.sv',l:'56',c:'Y',p:'50.00'}
-,{cr:'c',t:'I',z:'      if (fifo_mem.size() < depth && tr.wfull == 0) begin',f:'scoreboard.sv',l:'56',h:'21',c:'g'}
-,{cr:'m',t:'T',z:'      else if (fifo_mem.size() == depth && tr.wfull == 1) begin',f:'scoreboard.sv',l:'62',h:'0',c:'r'}
-,{cr:'m',t:'T',z:'      else if (fifo_mem.size() >= depth && tr.wfull == 0) begin',f:'scoreboard.sv',l:'67',h:'0',c:'r'}
-,{cr:'c',t:'E',z:'      else begin',f:'scoreboard.sv',l:'72',h:'127',c:'g'}
+{anchor:'cvg1318',items:[{z:'        fifo_mem.push_back(tr.wdata);',f:'scoreboard.sv',l:'56',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        fifo_mem.push_back(tr.wdata);',f:'scoreboard.sv',l:'56',h:'21',c:'g'}
+,{cr:'m',t:'T',z:'        `uvm_info(&#34;SCOREBOARD-WRITE&#34;, $sformatf(&#34;WRITE ignored, model ful...',f:'scoreboard.sv',l:'62',h:'0',c:'r'}
+,{cr:'m',t:'T',z:'      end',f:'scoreboard.sv',l:'67',h:'0',c:'r'}
+,{cr:'c',t:'E',z:'    if (tr.rinc) begin',f:'scoreboard.sv',l:'72',h:'127',c:'g'}
 ]},
-{anchor:'cvg1319',items:[{z:'        `uvm_info(&#34;SCOREBOARD-WRITE&#34;, $sformatf(&#34;WRITE %0d COMPLETED, PAS...',f:'scoreboard.sv',l:'59',c:'Y',p:'50.00'}
-,{cr:'c',t:'I',z:'        `uvm_info(&#34;SCOREBOARD-WRITE&#34;, $sformatf(&#34;WRITE %0d COMPLETED, PAS...',f:'scoreboard.sv',l:'59',h:'21',c:'g'}
-,{cr:'m',t:'A',z:'        `uvm_info(&#34;SCOREBOARD-WRITE&#34;, $sformatf(&#34;WRITE %0d COMPLETED, PAS...',f:'scoreboard.sv',l:'59',h:'0',c:'r'}
+{anchor:'cvg1319',items:[{z:'      end',f:'scoreboard.sv',l:'59',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'      end',f:'scoreboard.sv',l:'59',h:'21',c:'g'}
+,{cr:'m',t:'A',z:'      end',f:'scoreboard.sv',l:'59',h:'0',c:'r'}
 ]},
-{anchor:'cvg1320',items:[{z:'        `uvm_info(&#34;SCOREBOARD-WRITE&#34;, $sformatf(&#34;WRITE ignored, model ful...',f:'scoreboard.sv',l:'64',c:'R',p:'0.00'}
-,{cr:'m',t:'I',z:'        `uvm_info(&#34;SCOREBOARD-WRITE&#34;, $sformatf(&#34;WRITE ignored, model ful...',f:'scoreboard.sv',l:'64',h:'0',c:'r'}
-,{cr:'m',t:'A',z:'        `uvm_info(&#34;SCOREBOARD-WRITE&#34;, $sformatf(&#34;WRITE ignored, model ful...',f:'scoreboard.sv',l:'64',h:'0',c:'r'}
+{anchor:'cvg1320',items:[{z:'      else begin',f:'scoreboard.sv',l:'64',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'      else begin',f:'scoreboard.sv',l:'64',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'      else begin',f:'scoreboard.sv',l:'64',h:'0',c:'r'}
 ]},
-{anchor:'cvg1321',items:[{z:'        `uvm_error(&#34;SCOREBOARD-WRITE&#34;, $sformatf(&#34;DUT failed to assert wf...',f:'scoreboard.sv',l:'69',c:'R',p:'0.00'}
-,{cr:'m',t:'I',z:'        `uvm_error(&#34;SCOREBOARD-WRITE&#34;, $sformatf(&#34;DUT failed to assert wf...',f:'scoreboard.sv',l:'69',h:'0',c:'r'}
-,{cr:'m',t:'A',z:'        `uvm_error(&#34;SCOREBOARD-WRITE&#34;, $sformatf(&#34;DUT failed to assert wf...',f:'scoreboard.sv',l:'69',h:'0',c:'r'}
+{anchor:'cvg1321',items:[{z:'  endtask',f:'scoreboard.sv',l:'69',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  endtask',f:'scoreboard.sv',l:'69',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  endtask',f:'scoreboard.sv',l:'69',h:'0',c:'r'}
 ]},
-{anchor:'cvg1322',items:[{z:'        `uvm_error(&#34;SCOREBOARD-WRITE&#34;, &#34;DUT asserted wfull too early, FAI...',f:'scoreboard.sv',l:'74',c:'Y',p:'50.00'}
-,{cr:'c',t:'I',z:'        `uvm_error(&#34;SCOREBOARD-WRITE&#34;, &#34;DUT asserted wfull too early, FAI...',f:'scoreboard.sv',l:'74',h:'127',c:'g'}
-,{cr:'m',t:'A',z:'        `uvm_error(&#34;SCOREBOARD-WRITE&#34;, &#34;DUT asserted wfull too early, FAI...',f:'scoreboard.sv',l:'74',h:'0',c:'r'}
+{anchor:'cvg1322',items:[{z:'        read_op = fifo_mem.pop_front();',f:'scoreboard.sv',l:'74',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        read_op = fifo_mem.pop_front();',f:'scoreboard.sv',l:'74',h:'127',c:'g'}
+,{cr:'m',t:'A',z:'        read_op = fifo_mem.pop_front();',f:'scoreboard.sv',l:'74',h:'0',c:'r'}
 ]}],
 b1329:[{dummy:0},
-{anchor:'cvg1330',items:[{z:'    if (tr.rinc) begin',f:'scoreboard.sv',l:'82',c:'G',p:'100.00'}
-,{cr:'c',t:'I',z:'    if (tr.rinc) begin',f:'scoreboard.sv',l:'82',h:'74',c:'g'}
-,{cr:'c',t:'A',z:'    if (tr.rinc) begin',f:'scoreboard.sv',l:'82',h:'48',c:'g'}
+{anchor:'cvg1330',items:[{z:'        end',f:'scoreboard.sv',l:'82',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'        end',f:'scoreboard.sv',l:'82',h:'74',c:'g'}
+,{cr:'c',t:'A',z:'        end',f:'scoreboard.sv',l:'82',h:'48',c:'g'}
 ]},
-{anchor:'cvg1331',items:[{z:'      if (fifo_mem.size() > 0 && tr.rempty == 0) begin',f:'scoreboard.sv',l:'83',c:'Y',p:'60.00'}
-,{cr:'c',t:'I',z:'      if (fifo_mem.size() > 0 && tr.rempty == 0) begin',f:'scoreboard.sv',l:'83',h:'21',c:'g'}
-,{cr:'c',t:'T',z:'      else if (fifo_mem.size() == 0 && tr.rempty == 1) begin',f:'scoreboard.sv',l:'96',h:'22',c:'g'}
-,{cr:'c',t:'T',z:'      else if (fifo_mem.size() == 0 && tr.rempty == 0) begin',f:'scoreboard.sv',l:'101',h:'31',c:'g'}
-,{cr:'m',t:'T',z:'      else if (fifo_mem.size() != 0 && tr.rempty == 1) begin',f:'scoreboard.sv',l:'106',h:'0',c:'r'}
-,{cr:'m',t:'A',z:'      if (fifo_mem.size() > 0 && tr.rempty == 0) begin',f:'scoreboard.sv',l:'83',h:'0',c:'r'}
+{anchor:'cvg1331',items:[{z:'      end',f:'scoreboard.sv',l:'83',c:'Y',p:'60.00'}
+,{cr:'c',t:'I',z:'      end',f:'scoreboard.sv',l:'83',h:'21',c:'g'}
+,{cr:'c',t:'T',z:'  function void report_phase(uvm_phase phase);',f:'scoreboard.sv',l:'96',h:'22',c:'g'}
+,{cr:'c',t:'T',z:'  endfunction',f:'scoreboard.sv',l:'101',h:'31',c:'g'}
+,{cr:'m',t:'T',f:'scoreboard.sv',l:'106',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'      end',f:'scoreboard.sv',l:'83',h:'0',c:'r'}
 ]},
-{anchor:'cvg1332',items:[{z:'        if (tr.rdata == rd_op) begin',f:'scoreboard.sv',l:'85',c:'Y',p:'50.00'}
-,{cr:'c',t:'I',z:'        if (tr.rdata == rd_op) begin',f:'scoreboard.sv',l:'85',h:'21',c:'g'}
-,{cr:'m',t:'E',z:'        else begin',f:'scoreboard.sv',l:'90',h:'0',c:'r'}
+{anchor:'cvg1332',items:[{z:'        read_pass_count++;',f:'scoreboard.sv',l:'85',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        read_pass_count++;',f:'scoreboard.sv',l:'85',h:'21',c:'g'}
+,{cr:'m',t:'E',z:'        read_op = fifo_mem.pop_front();',f:'scoreboard.sv',l:'90',h:'0',c:'r'}
 ]},
-{anchor:'cvg1333',items:[{z:'          `uvm_info(&#34;SCOREBOARD-READ&#34;, $sformatf(&#34;READ DATA MATCH: %0d, P...',f:'scoreboard.sv',l:'87',c:'Y',p:'50.00'}
-,{cr:'c',t:'I',z:'          `uvm_info(&#34;SCOREBOARD-READ&#34;, $sformatf(&#34;READ DATA MATCH: %0d, P...',f:'scoreboard.sv',l:'87',h:'21',c:'g'}
-,{cr:'m',t:'A',z:'          `uvm_info(&#34;SCOREBOARD-READ&#34;, $sformatf(&#34;READ DATA MATCH: %0d, P...',f:'scoreboard.sv',l:'87',h:'0',c:'r'}
+{anchor:'cvg1333',items:[{z:'      end',f:'scoreboard.sv',l:'87',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'      end',f:'scoreboard.sv',l:'87',h:'21',c:'g'}
+,{cr:'m',t:'A',z:'      end',f:'scoreboard.sv',l:'87',h:'0',c:'r'}
 ]},
-{anchor:'cvg1334',items:[{z:'          `uvm_error(&#34;SCOREBOARD-READ&#34;, $sformatf(&#34;READ MISMATCH: DUT=%0d...',f:'scoreboard.sv',l:'92',c:'R',p:'0.00'}
-,{cr:'m',t:'I',z:'          `uvm_error(&#34;SCOREBOARD-READ&#34;, $sformatf(&#34;READ MISMATCH: DUT=%0d...',f:'scoreboard.sv',l:'92',h:'0',c:'r'}
-,{cr:'m',t:'A',z:'          `uvm_error(&#34;SCOREBOARD-READ&#34;, $sformatf(&#34;READ MISMATCH: DUT=%0d...',f:'scoreboard.sv',l:'92',h:'0',c:'r'}
+{anchor:'cvg1334',items:[{z:'      end',f:'scoreboard.sv',l:'92',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'      end',f:'scoreboard.sv',l:'92',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'      end',f:'scoreboard.sv',l:'92',h:'0',c:'r'}
 ]},
-{anchor:'cvg1335',items:[{z:'        `uvm_info(&#34;SCOREBOARD-READ&#34;, $sformatf(&#34;READ ignored, model empty...',f:'scoreboard.sv',l:'98',c:'Y',p:'50.00'}
-,{cr:'c',t:'I',z:'        `uvm_info(&#34;SCOREBOARD-READ&#34;, $sformatf(&#34;READ ignored, model empty...',f:'scoreboard.sv',l:'98',h:'22',c:'g'}
-,{cr:'m',t:'A',z:'        `uvm_info(&#34;SCOREBOARD-READ&#34;, $sformatf(&#34;READ ignored, model empty...',f:'scoreboard.sv',l:'98',h:'0',c:'r'}
+{anchor:'cvg1335',items:[{z:'    `uvm_info(&#34;SCOREBOARD-SUMMARY&#34;, ',f:'scoreboard.sv',l:'98',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SCOREBOARD-SUMMARY&#34;, ',f:'scoreboard.sv',l:'98',h:'22',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SCOREBOARD-SUMMARY&#34;, ',f:'scoreboard.sv',l:'98',h:'0',c:'r'}
 ]},
-{anchor:'cvg1336',items:[{z:'        `uvm_error(&#34;SCOREBOARD-READ&#34;, &#34;DUT failed to assert rempty when e...',f:'scoreboard.sv',l:'103',c:'Y',p:'50.00'}
-,{cr:'c',t:'I',z:'        `uvm_error(&#34;SCOREBOARD-READ&#34;, &#34;DUT failed to assert rempty when e...',f:'scoreboard.sv',l:'103',h:'31',c:'g'}
-,{cr:'m',t:'A',z:'        `uvm_error(&#34;SCOREBOARD-READ&#34;, &#34;DUT failed to assert rempty when e...',f:'scoreboard.sv',l:'103',h:'0',c:'r'}
+{anchor:'cvg1336',items:[{z:'endclass',f:'scoreboard.sv',l:'103',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'endclass',f:'scoreboard.sv',l:'103',h:'31',c:'g'}
+,{cr:'m',t:'A',z:'endclass',f:'scoreboard.sv',l:'103',h:'0',c:'r'}
 ]},
-{anchor:'cvg1337',items:[{z:'        `uvm_error(&#34;SCOREBOARD-READ&#34;, $sformatf(&#34;DUT asserted rempty too ...',f:'scoreboard.sv',l:'109',c:'R',p:'0.00'}
-,{cr:'m',t:'I',z:'        `uvm_error(&#34;SCOREBOARD-READ&#34;, $sformatf(&#34;DUT asserted rempty too ...',f:'scoreboard.sv',l:'109',h:'0',c:'r'}
-,{cr:'m',t:'A',z:'        `uvm_error(&#34;SCOREBOARD-READ&#34;, $sformatf(&#34;DUT asserted rempty too ...',f:'scoreboard.sv',l:'109',h:'0',c:'r'}
+{anchor:'cvg1337',items:[{z:'If-else:',f:'scoreboard.sv',l:'109',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'endclass',f:'scoreboard.sv',l:'109',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'endclass',f:'scoreboard.sv',l:'109',h:'0',c:'r'}
 ]}],
 b1346:[{dummy:0},
-{anchor:'cvg1347',items:[{z:'        read_pass_count, read_fail_count, write_pass_count, write_fail_co...',f:'scoreboard.sv',l:'120',c:'Y',p:'50.00'}
-,{cr:'c',t:'I',z:'        read_pass_count, read_fail_count, write_pass_count, write_fail_co...',f:'scoreboard.sv',l:'120',h:'1',c:'g'}
-,{cr:'m',t:'A',z:'        read_pass_count, read_fail_count, write_pass_count, write_fail_co...',f:'scoreboard.sv',l:'120',h:'0',c:'r'}
+{anchor:'cvg1347',items:[{z:'If-else:',f:'scoreboard.sv',l:'120',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'endclass',f:'scoreboard.sv',l:'120',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'endclass',f:'scoreboard.sv',l:'120',h:'0',c:'r'}
 ]}],
 b1364:[{dummy:0},
 {anchor:'cvg1365',items:[{z:'  `uvm_object_utils(virtual_sequence)',f:'virtual_sequence.sv',l:'3',c:'R',p:'0.00'}
@@ -1493,72 +1493,72 @@ b1717:[{dummy:0},
 ,{cr:'m',t:'A',z:'              UVM_LOW);',f:'subscriber.sv',l:'63',h:'0',c:'r'}
 ]}],
 b1727:[{dummy:0},
-{anchor:'cvg1728',items:[{z:'    if (tr.winc) begin',f:'scoreboard.sv',l:'55',c:'G',p:'100.00'}
-,{cr:'c',t:'I',z:'    if (tr.winc) begin',f:'scoreboard.sv',l:'55',h:'148',c:'g'}
-,{cr:'c',t:'A',z:'    if (tr.winc) begin',f:'scoreboard.sv',l:'55',h:'97',c:'g'}
+{anchor:'cvg1728',items:[{z:'      if (fifo_mem.size() < depth && tr.wfull == 0) begin',f:'scoreboard.sv',l:'55',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'      if (fifo_mem.size() < depth && tr.wfull == 0) begin',f:'scoreboard.sv',l:'55',h:'148',c:'g'}
+,{cr:'c',t:'A',z:'      if (fifo_mem.size() < depth && tr.wfull == 0) begin',f:'scoreboard.sv',l:'55',h:'97',c:'g'}
 ]},
-{anchor:'cvg1729',items:[{z:'      if (fifo_mem.size() < depth && tr.wfull == 0) begin',f:'scoreboard.sv',l:'56',c:'Y',p:'50.00'}
-,{cr:'c',t:'I',z:'      if (fifo_mem.size() < depth && tr.wfull == 0) begin',f:'scoreboard.sv',l:'56',h:'21',c:'g'}
-,{cr:'m',t:'T',z:'      else if (fifo_mem.size() == depth && tr.wfull == 1) begin',f:'scoreboard.sv',l:'62',h:'0',c:'r'}
-,{cr:'m',t:'T',z:'      else if (fifo_mem.size() >= depth && tr.wfull == 0) begin',f:'scoreboard.sv',l:'67',h:'0',c:'r'}
-,{cr:'c',t:'E',z:'      else begin',f:'scoreboard.sv',l:'72',h:'127',c:'g'}
+{anchor:'cvg1729',items:[{z:'        fifo_mem.push_back(tr.wdata);',f:'scoreboard.sv',l:'56',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        fifo_mem.push_back(tr.wdata);',f:'scoreboard.sv',l:'56',h:'21',c:'g'}
+,{cr:'m',t:'T',z:'        `uvm_info(&#34;SCOREBOARD-WRITE&#34;, $sformatf(&#34;WRITE ignored, model ful...',f:'scoreboard.sv',l:'62',h:'0',c:'r'}
+,{cr:'m',t:'T',z:'      end',f:'scoreboard.sv',l:'67',h:'0',c:'r'}
+,{cr:'c',t:'E',z:'    if (tr.rinc) begin',f:'scoreboard.sv',l:'72',h:'127',c:'g'}
 ]},
-{anchor:'cvg1730',items:[{z:'        `uvm_info(&#34;SCOREBOARD-WRITE&#34;, $sformatf(&#34;WRITE %0d COMPLETED, PAS...',f:'scoreboard.sv',l:'59',c:'Y',p:'50.00'}
-,{cr:'c',t:'I',z:'        `uvm_info(&#34;SCOREBOARD-WRITE&#34;, $sformatf(&#34;WRITE %0d COMPLETED, PAS...',f:'scoreboard.sv',l:'59',h:'21',c:'g'}
-,{cr:'m',t:'A',z:'        `uvm_info(&#34;SCOREBOARD-WRITE&#34;, $sformatf(&#34;WRITE %0d COMPLETED, PAS...',f:'scoreboard.sv',l:'59',h:'0',c:'r'}
+{anchor:'cvg1730',items:[{z:'      end',f:'scoreboard.sv',l:'59',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'      end',f:'scoreboard.sv',l:'59',h:'21',c:'g'}
+,{cr:'m',t:'A',z:'      end',f:'scoreboard.sv',l:'59',h:'0',c:'r'}
 ]},
-{anchor:'cvg1731',items:[{z:'        `uvm_info(&#34;SCOREBOARD-WRITE&#34;, $sformatf(&#34;WRITE ignored, model ful...',f:'scoreboard.sv',l:'64',c:'R',p:'0.00'}
-,{cr:'m',t:'I',z:'        `uvm_info(&#34;SCOREBOARD-WRITE&#34;, $sformatf(&#34;WRITE ignored, model ful...',f:'scoreboard.sv',l:'64',h:'0',c:'r'}
-,{cr:'m',t:'A',z:'        `uvm_info(&#34;SCOREBOARD-WRITE&#34;, $sformatf(&#34;WRITE ignored, model ful...',f:'scoreboard.sv',l:'64',h:'0',c:'r'}
+{anchor:'cvg1731',items:[{z:'      else begin',f:'scoreboard.sv',l:'64',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'      else begin',f:'scoreboard.sv',l:'64',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'      else begin',f:'scoreboard.sv',l:'64',h:'0',c:'r'}
 ]},
-{anchor:'cvg1732',items:[{z:'        `uvm_error(&#34;SCOREBOARD-WRITE&#34;, $sformatf(&#34;DUT failed to assert wf...',f:'scoreboard.sv',l:'69',c:'R',p:'0.00'}
-,{cr:'m',t:'I',z:'        `uvm_error(&#34;SCOREBOARD-WRITE&#34;, $sformatf(&#34;DUT failed to assert wf...',f:'scoreboard.sv',l:'69',h:'0',c:'r'}
-,{cr:'m',t:'A',z:'        `uvm_error(&#34;SCOREBOARD-WRITE&#34;, $sformatf(&#34;DUT failed to assert wf...',f:'scoreboard.sv',l:'69',h:'0',c:'r'}
+{anchor:'cvg1732',items:[{z:'  endtask',f:'scoreboard.sv',l:'69',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  endtask',f:'scoreboard.sv',l:'69',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  endtask',f:'scoreboard.sv',l:'69',h:'0',c:'r'}
 ]},
-{anchor:'cvg1733',items:[{z:'        `uvm_error(&#34;SCOREBOARD-WRITE&#34;, &#34;DUT asserted wfull too early, FAI...',f:'scoreboard.sv',l:'74',c:'Y',p:'50.00'}
-,{cr:'c',t:'I',z:'        `uvm_error(&#34;SCOREBOARD-WRITE&#34;, &#34;DUT asserted wfull too early, FAI...',f:'scoreboard.sv',l:'74',h:'127',c:'g'}
-,{cr:'m',t:'A',z:'        `uvm_error(&#34;SCOREBOARD-WRITE&#34;, &#34;DUT asserted wfull too early, FAI...',f:'scoreboard.sv',l:'74',h:'0',c:'r'}
+{anchor:'cvg1733',items:[{z:'        read_op = fifo_mem.pop_front();',f:'scoreboard.sv',l:'74',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        read_op = fifo_mem.pop_front();',f:'scoreboard.sv',l:'74',h:'127',c:'g'}
+,{cr:'m',t:'A',z:'        read_op = fifo_mem.pop_front();',f:'scoreboard.sv',l:'74',h:'0',c:'r'}
 ]}],
 b1740:[{dummy:0},
-{anchor:'cvg1741',items:[{z:'    if (tr.rinc) begin',f:'scoreboard.sv',l:'82',c:'G',p:'100.00'}
-,{cr:'c',t:'I',z:'    if (tr.rinc) begin',f:'scoreboard.sv',l:'82',h:'74',c:'g'}
-,{cr:'c',t:'A',z:'    if (tr.rinc) begin',f:'scoreboard.sv',l:'82',h:'48',c:'g'}
+{anchor:'cvg1741',items:[{z:'        end',f:'scoreboard.sv',l:'82',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'        end',f:'scoreboard.sv',l:'82',h:'74',c:'g'}
+,{cr:'c',t:'A',z:'        end',f:'scoreboard.sv',l:'82',h:'48',c:'g'}
 ]},
-{anchor:'cvg1742',items:[{z:'      if (fifo_mem.size() > 0 && tr.rempty == 0) begin',f:'scoreboard.sv',l:'83',c:'Y',p:'60.00'}
-,{cr:'c',t:'I',z:'      if (fifo_mem.size() > 0 && tr.rempty == 0) begin',f:'scoreboard.sv',l:'83',h:'21',c:'g'}
-,{cr:'c',t:'T',z:'      else if (fifo_mem.size() == 0 && tr.rempty == 1) begin',f:'scoreboard.sv',l:'96',h:'22',c:'g'}
-,{cr:'c',t:'T',z:'      else if (fifo_mem.size() == 0 && tr.rempty == 0) begin',f:'scoreboard.sv',l:'101',h:'31',c:'g'}
-,{cr:'m',t:'T',z:'      else if (fifo_mem.size() != 0 && tr.rempty == 1) begin',f:'scoreboard.sv',l:'106',h:'0',c:'r'}
-,{cr:'m',t:'A',z:'      if (fifo_mem.size() > 0 && tr.rempty == 0) begin',f:'scoreboard.sv',l:'83',h:'0',c:'r'}
+{anchor:'cvg1742',items:[{z:'      end',f:'scoreboard.sv',l:'83',c:'Y',p:'60.00'}
+,{cr:'c',t:'I',z:'      end',f:'scoreboard.sv',l:'83',h:'21',c:'g'}
+,{cr:'c',t:'T',z:'  function void report_phase(uvm_phase phase);',f:'scoreboard.sv',l:'96',h:'22',c:'g'}
+,{cr:'c',t:'T',z:'  endfunction',f:'scoreboard.sv',l:'101',h:'31',c:'g'}
+,{cr:'m',t:'T',f:'scoreboard.sv',l:'106',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'      end',f:'scoreboard.sv',l:'83',h:'0',c:'r'}
 ]},
-{anchor:'cvg1743',items:[{z:'        if (tr.rdata == rd_op) begin',f:'scoreboard.sv',l:'85',c:'Y',p:'50.00'}
-,{cr:'c',t:'I',z:'        if (tr.rdata == rd_op) begin',f:'scoreboard.sv',l:'85',h:'21',c:'g'}
-,{cr:'m',t:'E',z:'        else begin',f:'scoreboard.sv',l:'90',h:'0',c:'r'}
+{anchor:'cvg1743',items:[{z:'        read_pass_count++;',f:'scoreboard.sv',l:'85',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        read_pass_count++;',f:'scoreboard.sv',l:'85',h:'21',c:'g'}
+,{cr:'m',t:'E',z:'        read_op = fifo_mem.pop_front();',f:'scoreboard.sv',l:'90',h:'0',c:'r'}
 ]},
-{anchor:'cvg1744',items:[{z:'          `uvm_info(&#34;SCOREBOARD-READ&#34;, $sformatf(&#34;READ DATA MATCH: %0d, P...',f:'scoreboard.sv',l:'87',c:'Y',p:'50.00'}
-,{cr:'c',t:'I',z:'          `uvm_info(&#34;SCOREBOARD-READ&#34;, $sformatf(&#34;READ DATA MATCH: %0d, P...',f:'scoreboard.sv',l:'87',h:'21',c:'g'}
-,{cr:'m',t:'A',z:'          `uvm_info(&#34;SCOREBOARD-READ&#34;, $sformatf(&#34;READ DATA MATCH: %0d, P...',f:'scoreboard.sv',l:'87',h:'0',c:'r'}
+{anchor:'cvg1744',items:[{z:'      end',f:'scoreboard.sv',l:'87',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'      end',f:'scoreboard.sv',l:'87',h:'21',c:'g'}
+,{cr:'m',t:'A',z:'      end',f:'scoreboard.sv',l:'87',h:'0',c:'r'}
 ]},
-{anchor:'cvg1745',items:[{z:'          `uvm_error(&#34;SCOREBOARD-READ&#34;, $sformatf(&#34;READ MISMATCH: DUT=%0d...',f:'scoreboard.sv',l:'92',c:'R',p:'0.00'}
-,{cr:'m',t:'I',z:'          `uvm_error(&#34;SCOREBOARD-READ&#34;, $sformatf(&#34;READ MISMATCH: DUT=%0d...',f:'scoreboard.sv',l:'92',h:'0',c:'r'}
-,{cr:'m',t:'A',z:'          `uvm_error(&#34;SCOREBOARD-READ&#34;, $sformatf(&#34;READ MISMATCH: DUT=%0d...',f:'scoreboard.sv',l:'92',h:'0',c:'r'}
+{anchor:'cvg1745',items:[{z:'      end',f:'scoreboard.sv',l:'92',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'      end',f:'scoreboard.sv',l:'92',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'      end',f:'scoreboard.sv',l:'92',h:'0',c:'r'}
 ]},
-{anchor:'cvg1746',items:[{z:'        `uvm_info(&#34;SCOREBOARD-READ&#34;, $sformatf(&#34;READ ignored, model empty...',f:'scoreboard.sv',l:'98',c:'Y',p:'50.00'}
-,{cr:'c',t:'I',z:'        `uvm_info(&#34;SCOREBOARD-READ&#34;, $sformatf(&#34;READ ignored, model empty...',f:'scoreboard.sv',l:'98',h:'22',c:'g'}
-,{cr:'m',t:'A',z:'        `uvm_info(&#34;SCOREBOARD-READ&#34;, $sformatf(&#34;READ ignored, model empty...',f:'scoreboard.sv',l:'98',h:'0',c:'r'}
+{anchor:'cvg1746',items:[{z:'    `uvm_info(&#34;SCOREBOARD-SUMMARY&#34;, ',f:'scoreboard.sv',l:'98',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SCOREBOARD-SUMMARY&#34;, ',f:'scoreboard.sv',l:'98',h:'22',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SCOREBOARD-SUMMARY&#34;, ',f:'scoreboard.sv',l:'98',h:'0',c:'r'}
 ]},
-{anchor:'cvg1747',items:[{z:'        `uvm_error(&#34;SCOREBOARD-READ&#34;, &#34;DUT failed to assert rempty when e...',f:'scoreboard.sv',l:'103',c:'Y',p:'50.00'}
-,{cr:'c',t:'I',z:'        `uvm_error(&#34;SCOREBOARD-READ&#34;, &#34;DUT failed to assert rempty when e...',f:'scoreboard.sv',l:'103',h:'31',c:'g'}
-,{cr:'m',t:'A',z:'        `uvm_error(&#34;SCOREBOARD-READ&#34;, &#34;DUT failed to assert rempty when e...',f:'scoreboard.sv',l:'103',h:'0',c:'r'}
+{anchor:'cvg1747',items:[{z:'endclass',f:'scoreboard.sv',l:'103',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'endclass',f:'scoreboard.sv',l:'103',h:'31',c:'g'}
+,{cr:'m',t:'A',z:'endclass',f:'scoreboard.sv',l:'103',h:'0',c:'r'}
 ]},
-{anchor:'cvg1748',items:[{z:'        `uvm_error(&#34;SCOREBOARD-READ&#34;, $sformatf(&#34;DUT asserted rempty too ...',f:'scoreboard.sv',l:'109',c:'R',p:'0.00'}
-,{cr:'m',t:'I',z:'        `uvm_error(&#34;SCOREBOARD-READ&#34;, $sformatf(&#34;DUT asserted rempty too ...',f:'scoreboard.sv',l:'109',h:'0',c:'r'}
-,{cr:'m',t:'A',z:'        `uvm_error(&#34;SCOREBOARD-READ&#34;, $sformatf(&#34;DUT asserted rempty too ...',f:'scoreboard.sv',l:'109',h:'0',c:'r'}
+{anchor:'cvg1748',items:[{z:'If-else:',f:'scoreboard.sv',l:'109',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'endclass',f:'scoreboard.sv',l:'109',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'endclass',f:'scoreboard.sv',l:'109',h:'0',c:'r'}
 ]}],
 b1757:[{dummy:0},
-{anchor:'cvg1758',items:[{z:'        read_pass_count, read_fail_count, write_pass_count, write_fail_co...',f:'scoreboard.sv',l:'120',c:'Y',p:'50.00'}
-,{cr:'c',t:'I',z:'        read_pass_count, read_fail_count, write_pass_count, write_fail_co...',f:'scoreboard.sv',l:'120',h:'1',c:'g'}
-,{cr:'m',t:'A',z:'        read_pass_count, read_fail_count, write_pass_count, write_fail_co...',f:'scoreboard.sv',l:'120',h:'0',c:'r'}
+{anchor:'cvg1758',items:[{z:'If-else:',f:'scoreboard.sv',l:'120',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'endclass',f:'scoreboard.sv',l:'120',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'endclass',f:'scoreboard.sv',l:'120',h:'0',c:'r'}
 ]}],
 b1775:[{dummy:0},
 {anchor:'cvg1776',items:[{z:'  `uvm_object_utils(virtual_sequence)',f:'virtual_sequence.sv',l:'3',c:'R',p:'0.00'}

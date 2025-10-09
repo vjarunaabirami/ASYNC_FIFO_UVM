@@ -1,5 +1,4 @@
 class test extends uvm_test;
-  
   `uvm_component_utils(test)
 
   environment env_o;
@@ -11,16 +10,21 @@ class test extends uvm_test;
 
   function void build_phase(uvm_phase phase);
     super.build_phase(phase);
-    env_o   = environment::type_id::create("env_o", this);
+    env_o = environment::type_id::create("env_o", this);
   endfunction
 
   task run_phase(uvm_phase phase);
-    super.run_phase(phase);
-    phase.raise_objection(this);   
+    phase.raise_objection(this);
+
     v_seq = virtual_sequence::type_id::create("v_seq");
+
+    // Pass the sequence name you want to run
+    if($value$plusargs("SEQ=%s", v_seq.run_seq_name))
+      $display("Running sequence: %s", v_seq.run_seq_name);
+
     v_seq.start(env_o.v_seqr);
+
     phase.drop_objection(this);
   endtask
-
 endclass
 

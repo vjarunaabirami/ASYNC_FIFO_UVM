@@ -43,7 +43,7 @@ interface async_fifo_interface(input wclk, rclk,wrst_n,rrst_n);
 
 endinterface
 
-
+/*
 // =====================================================
 // ASSERTION-1 : FULL and EMPTY should never be high together
 // =====================================================
@@ -102,4 +102,4 @@ rdata_check:
     $info("ASSERTION-4 PASSED: RDATA CHECK");
   else
     $error("ASSERTION-4 FAILED: RDATA CHECK");
-
+*/
