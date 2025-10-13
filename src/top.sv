@@ -1,4 +1,4 @@
- //import uvm_pkg::*;  
+ import uvm_pkg::*;  
 `include "uvm_pkg.sv"
 `include "uvm_macros.svh"
 `include "async_fifo_pkg.sv"
@@ -24,8 +24,8 @@ module top;
     rrst_n = 0;
     wrst_n = 0;
     
-  #20 rrst_n = 1;
-  #20 wrst_n = 1;
+  #10 rrst_n = 1;
+  #10 wrst_n = 1;
   end
   
   

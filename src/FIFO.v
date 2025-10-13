@@ -46,7 +46,8 @@ module FIFO #(parameter DSIZE = 8,
         .raddr(raddr),
         .wclk_en(winc), 
         .wfull(wfull),
-        .wclk(wclk)
+        .wclk(wclk),
+      .rclk(rclk)
     );
 
     rptr_empty #(ASIZE) rptr_empty(         // Read pointer and empty signal handling
@@ -79,4 +80,4 @@ endmodule
 // read and write pointers are checked for empty and full conditions,
 // respectively. The FIFO memory module stores the data and handles the
 // read and write operations.
-// -----------------------------------------------------------------------
+// -----------------------------------------------------------------------/ -----------------------------------------------------------------------

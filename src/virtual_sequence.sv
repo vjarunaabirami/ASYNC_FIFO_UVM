@@ -28,6 +28,7 @@ class virtual_sequence extends uvm_sequence_base;
 
   task body();
 
+    // Create all sequence objects
     w_seq = async_fifo_write_seq::type_id::create("w_seq");
     full_wrt_seq= write_full::type_id::create("full_wrt_seq");
     no_wrt_seq  = no_write::type_id::create("no_wrt_seq");
@@ -38,6 +39,7 @@ class virtual_sequence extends uvm_sequence_base;
     full_rd_seq = full_read::type_id::create("full_rd_seq");
     rdist_seq   = rd_dist::type_id::create("rd_dist");
 
+    // Run the selected sequence
     case (run_seq_name)
       "write_read": begin
           w_seq.start(p_sequencer.wr_seqr);

@@ -11,7 +11,9 @@ class async_fifo_write_seq extends uvm_sequence #(async_fifo_write_sequence_item
       `uvm_do_with(req,{req.winc==1'b1;})
 
       `uvm_info("WRITE_SEQ", $sformatf("WRITE -> Data: 0x%0h", req.wdata), UVM_LOW)
+      
     end
+    `uvm_do_with(req,{req.winc==1'b0; req.wdata==0;})
   endtask
 endclass
 
